@@ -233,7 +233,7 @@ const jsonLd = [
           entry.data.checkedDate && (
             <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 font-medium text-emerald-600 dark:text-emerald-400">
               <Icon name="lucide:check-check" class="h-3.5 w-3.5" />
-              Checked {entry.data.checkedDate.toLocaleDateString(locale, { timeZone: 'UTC' })}
+              Checked {entry.data.checkedDate.toLocaleDateString(locale, { timeZone: 'UTC', year: 'numeric', month: 'short', day: 'numeric' })}
               {entry.data.gameVersion && ` · ${entry.data.gameVersion}`}
             </span>
           )
