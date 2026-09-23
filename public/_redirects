@@ -1,0 +1,2 @@
+# Canonical domain: strip www (301, preserves path + query)
+https://www.rideapet.net/* https://rideapet.net/:splat 301
