@@ -35,6 +35,12 @@ const wiki = defineCollection({
       category: z.enum(CONTENT_TYPES as [string, ...string[]]),
       date: z.coerce.date(),
       lastModified: z.coerce.date().optional(),
+      /**
+       * Last date a human or agent actually re-verified this page's facts
+       * against sources (distinct from lastModified = any content edit).
+       * Rendered as a "✓ Checked" trust badge on the article header.
+       */
+      checkedDate: z.coerce.date().optional(),
       image: image().optional(),
       tags: z.array(z.string()).default([]),
       noindex: z.boolean().default(false),

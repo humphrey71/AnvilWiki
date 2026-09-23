@@ -4,19 +4,32 @@ description: "Every Ride A Pet pet ranked: Kitsune and Dragon in S tier, confirm
 category: "pets"
 date: 2026-09-23
 lastModified: 2026-09-23
+checkedDate: 2026-09-23
 gameVersion: "Update 2"
-image: '../../../../assets/covers/en-pets-pets-tier-list.png'
-summary: "The best pets in Ride A Pet are Kitsune (about 1 billion speed, the fastest mount in the game) and Dragon, which only hatches from the rare Dragon Egg. Phoenix, T-Rex, and Unicorn fill out the top ranks. This tier list covers all 30 pets with every confirmed speed, income, and hatch-chance number we could verify."
+summary: "The best pets in Ride A Pet are Kitsune (about 1 billion speed, the fastest mount in the game) and Dragon, an endgame hatch whose egg source is community-reported. Phoenix, T-Rex, and Unicorn fill out the top ranks. This tier list covers all 30 pets with every confirmed speed, income, and hatch-chance number we could verify."
 tags: ["pets", "tier-list", "speed", "hatching"]
+faq:
+  - question: "What is the best pet in Ride A Pet?"
+    answer: "Kitsune is the best pet overall — it is the fastest mount at roughly 1 billion speed and hatches from the rarest confirmed egg in the game. Dragon is the other S-tier pick; its hatch source is community-reported, so treat the details as unverified."
+  - question: "How many pets are in Ride A Pet?"
+    answer: "There are 30 pets, from commons like Chicken, Pig, and Snail up to the Ethereal pair Kitsune and Phoenix, with Dragon as an endgame hatch."
+  - question: "Which pet is fastest in Ride A Pet?"
+    answer: "Kitsune at approximately 1,000,000,000 speed. Phoenix (1,000,000) and T-Rex (266,000) are the next fastest confirmed mounts."
+  - question: "Which pets do rebirths need?"
+    answer: "The seven rebirths require pets in this order: Horse, Fox, Unicorn, Phoenix, Kitsune, Kitsune again, and finally Dragon. Keep at least one of each — see our full rebirth guide for the money costs."
+  - question: "Is Dragon or Kitsune harder to hatch?"
+    answer: "Community trackers put Dragon's hatch odds at or below Kitsune's despite Dragon ranking one tier lower in speed. Both are endgame hatches you should chase only after your income is established."
 ---
 
 import Callout from "~/components/mdx/Callout.astro";
 
+import { PET_STATS, DRAGON_EGG_NOTE } from "~/content/data/game-data";
+
 ## What is the best pet in Ride A Pet?
 
-Kitsune and Dragon are the two S-tier pets. Kitsune is the confirmed fastest mount in the game at roughly 1 billion speed, with a hatch chance around 1 in 1 Qi (quintillion). Dragon hatches exclusively from the Dragon Egg and, despite ranking below Kitsune in speed, community data suggests it is actually the harder pull. Everything else in the game is a stepping stone toward these two.
+Kitsune and Dragon are the two S-tier pets. Kitsune is the confirmed fastest mount in the game at roughly 1 billion speed. Dragon is an endgame hatch — community data suggests it is actually the harder pull of the two, though its egg source is not yet verified (see the note under the stats table).
 
-For how mutations multiply a pet's stats — the fastest path to a truly endgame pet — see our [mutations guide](/mutations/all-mutations/).
+For how mutations multiply a pet's stats, see the [mutations guide](/mutations/all-mutations/).
 
 ## How are all 30 pets ranked?
 
@@ -29,29 +42,31 @@ For how mutations multiply a pet's stats — the fastest path to a truly endgame
 | **D** | Horse, Deer, Kangaroo, Ostrich, Elephant, Giraffe, Fox, Panda, Koala, Axolotl, Capybara | Forest-ring workhorses; Fox and Horse are rebirth requirements |
 | **E** | Chicken, Pig, Snail, Sloth | Starter commons for early nests |
 
-## What are the confirmed stats for top pets?
+## What are the confirmed stats?
 
-| Pet | Hatch chance | Speed | Income/s | Notes |
-| --- | --- | --- | --- | --- |
-| Kitsune | 1 in 1Qi | ~1,000,000,000 | — | Fastest mount; Ethereal |
-| Phoenix | 1 in 30T | 1,000,000 | 100,000 | 146 jump; Ethereal |
-| T-Rex | 1 in 10T | 266,000 | 50,000 | A-tier |
-| Unicorn | 1 in 1T | 137,000 | 30,000 | [Rebirth 3 requirement](/rebirths/all-rebirths/) |
-| Horse | 1 in 500K | 5,340 | — | Rebirth 1 requirement |
-| Dragon | unconfirmed | unconfirmed | — | Dragon Egg exclusive; S-tier |
+Stats exist for the six pets below. The other 24 have no published, source-backed numbers yet — they live in the tier table above, and their rows appear here as data is verified.
 
-<Callout type="warn">Stats for the other 24 pets are not yet published with verified numbers — sources disagree, so we only list what two or more trackers confirm. This table locks in as data is verified in-game.</Callout>
+<table>
+<thead><tr><th>Pet</th><th>Hatch odds (1 in)</th><th>Speed</th><th>Income</th><th>Notes</th><th>Status</th></tr></thead>
+<tbody>
+{PET_STATS.map(p => (
+  <tr><td><strong>{p.pet}</strong></td><td>{p.hatchChance}</td><td>{p.speed}</td><td>{p.income}</td><td>{p.notes}</td><td>{p.status}</td></tr>
+))}
+</tbody>
+</table>
+
+*{DRAGON_EGG_NOTE}*
+
+Status key: **confirmed** = multiple sources agree; **community** = single-source, pending in-game verification.
 
 ## How do pets connect to rebirths?
 
-Ride A Pet gates all seven rebirths behind specific pets: Horse → Fox → Unicorn → Phoenix → Kitsune → Kitsune → Dragon. That means you never want to sell your last Horse or Fox even after they look obsolete — the [rebirth requirements guide](/rebirths/all-rebirths/) has the full money costs alongside.
+All seven rebirths are gated behind specific pets: Horse → Fox → Unicorn → Phoenix → Kitsune → Kitsune → Dragon. Never sell your last Horse or Fox even after they look obsolete — the [rebirth requirements guide](/rebirths/all-rebirths/) has the full costs alongside.
 
 ## Which pets should you ride vs. sell?
 
-Ride your fastest available mount at all times (speed = more eggs per minute), and pen the rest for passive income. The split matters most mid-game:
+- **Ride**: your fastest pet (speed = more eggs per minute), ideally weather-mutated — multipliers in the [mutations guide](/mutations/all-mutations/)
+- **Pen**: high income/s earners, especially Phoenix-type pets
+- **Never sell**: one of each rebirth-required pet
 
-- **Ride**: the highest-speed pet you own, ideally with a weather mutation — see [mutation multipliers](/mutations/all-mutations/)
-- **Pen**: anything with high income/s, especially Phoenix-type earners
-- **Never sell**: one of each rebirth-required pet (Horse, Fox, Unicorn, Phoenix, Kitsune ×2, Dragon)
-
-<Callout type="tip">Hatching is volume play: commons fill nests fast, but the smart move during any 5-minute weather event is grabbing rare eggs only — a mutated Phoenix beats ten plain ones.</Callout>
+<Callout type="tip">During any weather event, grab rare eggs only — a mutated Phoenix beats ten plain ones. Egg spawn zones are in the [egg guide](/eggs/all-eggs/).</Callout>

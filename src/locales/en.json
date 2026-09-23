@@ -152,8 +152,8 @@
   },
   "home": {
     "meta": {
-      "title": "Ride A Pet Wiki — Codes, Guides & Tier Lists",
-      "description": "Complete Ride A Pet wiki with codes, pet tier lists, egg locations, mutation guides and rebirth tips. Every page carries a last-verified date."
+      "title": "Ride A Pet Wiki — Pets, Eggs, Mutations & Rebirths",
+      "description": "Ride A Pet guides with real data: pet tier list, all 23 eggs by find odds, mutation multipliers, rebirth requirements. Every fact carries a source status."
     },
     "updates": {
       "title": "Recent updates"
@@ -163,16 +163,20 @@
       "title": "Most read",
       "quickLinks": [
         {
-          "label": "Codes",
-          "href": "/codes"
-        },
-        {
           "label": "Pets",
           "href": "/pets"
         },
         {
           "label": "Eggs",
           "href": "/eggs"
+        },
+        {
+          "label": "Mutations",
+          "href": "/mutations"
+        },
+        {
+          "label": "Codes",
+          "href": "/codes"
         }
       ]
     },
@@ -184,8 +188,8 @@
     },
     "hero": {
       "badge": "Fan-made wiki",
-      "title": "Ride A Pet Codes",
-      "description": "All working Ride A Pet codes with expiry dates, plus guides and tier lists.",
+      "title": "Ride A Pet Wiki",
+      "description": "Data-backed guides: pet tier list, egg find odds, mutation multipliers, and every rebirth requirement — with source status on every number.",
       "ctaPrimary": "Play now",
       "ctaSecondary": "Browse guides"
     },
@@ -195,24 +199,24 @@
       "cards": [
         {
           "number": "1",
-          "title": "Codes",
-          "description": "Free gold, XP, cosmetics",
-          "icon": "lucide:gift",
-          "href": "/codes"
-        },
-        {
-          "number": "2",
-          "title": "Bosses",
-          "description": "Phase-by-phase strategy",
-          "icon": "lucide:swords",
+          "title": "Pet tier list",
+          "description": "All 30 pets ranked with verified stats",
+          "icon": "lucide:bar-chart-3",
           "href": "/pets"
         },
         {
+          "number": "2",
+          "title": "Mutations",
+          "description": "All 8 multipliers and stacking rules",
+          "icon": "lucide:zap",
+          "href": "/mutations"
+        },
+        {
           "number": "3",
-          "title": "Tier list",
-          "description": "Best weapons ranked",
-          "icon": "lucide:bar-chart-3",
-          "href": "/eggs"
+          "title": "Rebirths",
+          "description": "Every requirement for all 7 tiers",
+          "icon": "lucide:refresh-cw",
+          "href": "/rebirths"
         }
       ]
     },
@@ -222,15 +226,39 @@
       "modules": [
         {
           "order": 1,
-          "name": "Active codes",
-          "description": "Redeem before they expire",
+          "name": "Pet tier list",
+          "description": "30 pets, 6 tiers, verified stats where they exist",
+          "href": "/pets",
+          "displayType": "badge-list",
+          "highlights": [
+            {
+              "label": "Kitsune",
+              "detail": "~1B speed — fastest mount",
+              "badge": "S"
+            },
+            {
+              "label": "Phoenix",
+              "detail": "1M speed · 100k/s income",
+              "badge": "A"
+            },
+            {
+              "label": "Dragon",
+              "detail": "Endgame hatch — community data",
+              "badge": "S"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "name": "Codes",
+          "description": "No codes released yet — checked daily",
           "href": "/codes",
           "displayType": "badge-list",
           "highlights": [
             {
-              "label": "CODE-PLACEHOLDER",
-              "detail": "Tap to copy on the codes page",
-              "badge": "NEW"
+              "label": "No active codes",
+              "detail": "Checked Sep 23, 2026 · table stays ready",
+              "badge": "✓"
             }
           ]
         }
