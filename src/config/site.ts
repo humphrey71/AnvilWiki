@@ -72,7 +72,7 @@ export const site: SiteConfig = {
   // renders it as a mailto link.
   contactEmail: '',
   social: {
-    official: 'https://www.roblox.com/games',
+    official: 'https://www.roblox.com/games/124216119978534/Ride-A-Pet',
   },
   game: {
     name: 'Ride A Pet',
