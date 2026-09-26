@@ -19,3 +19,14 @@
 - 亮点：Vox Heroes 17 天 1966 评分 9.3，autocomplete 已现「vox heroes wiki」攻略萌芽（待 SERP 验意图，有 Vox Machina 噪音）；Hyper Fliplation 9/25 当天上线 151 评分，autocomplete 未成形，按早期爆发轨观察。
 - 异常发现：本日泛词噪音比例偏高（4/6），CG 平台内高评分（Rocket Fling 1493/9.0、Splash Sliders 1331/8.9）与独立搜索需求完全脱节，再次验证 SOP「平台流量≠独立需求」判据；多个新游单页（Slime Works、Paper Guys、FlyCraft、Steal Eggs、Project Gatherwood）JSON-LD 无 aggregateRating（评分未积累或页面未嵌入）。
 - 复查计划：9/28 到期 Vox Heroes（SERP 验意图）、Hyper Fliplation（autocomplete 成形核查）。
+
+## 2026-09-26 每日挖词摘要（cron 静默）
+- 渠道：CrazyGames /new 列表抓取（UA 伪装 curl，60+ 游戏）→ 21 个新面孔/疑似新爆单页 JSON-LD 抽查（ratingCount/rating/datePublished）→ Google autocomplete 萌芽探针 ×24 词 + 在观候选复测 5 词。未访问 steamdb.info（IP 封禁，遵守）。
+- 新增候选 15 个，决定分布：考虑 5 / 不做 10。
+  - 考虑：Steal a Eggs（9/25 上线当天 3921 评分 9.3，入池以来最强爆发；autocomplete codes/script/spawn 生态丰富，待 SERP 验 Roblox 占位）、Kick Brainrot Balls（codes/wiki 需求在，疑 Roblox「Kick a Brainrot」占位）、Spectre Command AC-130（「ac130 simulator game/online/browser」游戏意图词群强，品牌词被 EDA 工具噪音占位）、Cannon Chaos Silly Shots（精确词条 autocomplete 已成形）、1 Speed Keyboard Escape（codes 需求成形但混 Fortnite 地图词）
+  - 不做：One Shot Duel、Monster Island、Island Cleanup、Soccer Orbit、Paintseek、Paint Hide、Mob Rush、Escape Pickaxe Swing、Slime Works（均泛词噪音/需求未成形）
+- 异常发现：
+  1. Steal a Eggs 单日 ratingCount 3921 创入池纪录（此前最强 Island of Madness 上线当天 282）；Real War Not Fake 9/15 上线 11 天 12790 评分——平台内爆发强度与独立 wiki 需求继续脱钩，SOP 判据 1 持续有效
+  2. 本日「codes 类」需求密度高（steal a egg / kick brainrot / 1 speed keyboard / escape pickaxe），多与 Roblox 同名原作纠缠，代码站护城河薄，统一 9/29 SERP 验意图后再判
+  3. 在观候选复测：Island of Madness「island of madness game」萌芽仍在；Combo Critters「wiki/combinations/all combinations」攻略需求稳定且新增 battle checkers 长尾，趋向升级；Hyper Fliplation 仍无 autocomplete（需求未成形）；Vox Heroes「vox heroes wiki」稳定但仍混 Vox Machina 噪音；slime works game 无结果
+- 复查计划：9/27 Island of Madness、Combo Critters（R1，Combo Critters 复测信号转好，R1 重点核 2016 同名手游占位）；9/29 本日 5 个新【考虑】统一 SERP 验意图。
