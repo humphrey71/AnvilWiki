@@ -30,3 +30,10 @@
   2. 本日「codes 类」需求密度高（steal a egg / kick brainrot / 1 speed keyboard / escape pickaxe），多与 Roblox 同名原作纠缠，代码站护城河薄，统一 9/29 SERP 验意图后再判
   3. 在观候选复测：Island of Madness「island of madness game」萌芽仍在；Combo Critters「wiki/combinations/all combinations」攻略需求稳定且新增 battle checkers 长尾，趋向升级；Hyper Fliplation 仍无 autocomplete（需求未成形）；Vox Heroes「vox heroes wiki」稳定但仍混 Vox Machina 噪音；slime works game 无结果
 - 复查计划：9/27 Island of Madness、Combo Critters（R1，Combo Critters 复测信号转好，R1 重点核 2016 同名手游占位）；9/29 本日 5 个新【考虑】统一 SERP 验意图。
+
+## 2026-09-27 每日挖词（第5轮，定时任务）
+- 渠道：CrazyGames /new（curl+UA 正常，70 个游戏 slug）；禁 steamdb 按要求未访问
+- 新面孔 9 个：Obby: +1 Laser to Break Walls、Project Gatherwood、FlyCraft、Roll King、Slime Horde TD、Tanks 1944、Tap Fighter、Blocky Sword、Paper Guys/Blink（后两者无评分数据跳过）
+- 决定分布：考虑 1（Obby: +1 Laser，9535 评分 9.4 但 autocomplete 全无结果）；不做 7（均为泛词噪音/单条回声）；做 0
+- 到期复查：Island of Madness R1、Combo Critters R1（均为 9/27 手动补测，结果已入表：前者升【做】，后者维持考虑）
+- 异常：无；suggestqueries.google.com 正常；9/29 到期行 Steal a Eggs 已预核 autocomplete（roblox 占位风险高）
