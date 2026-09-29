@@ -35,7 +35,7 @@ pages_build_output_dir = "dist"
 
 [vars]
 # Site (must include https:// protocol — Astro validates this as a URL)
-SITE_URL = "https://ballvsball.net"
+SITE_URL = "https://ballvsball.org"
 # Legacy IndexNow override for the anvil.wiki demo deployment.
 # New forks generate and commit .indexnow-key during initialization.
 INDEXNOW_KEY = "736d8608fdec899849d382dffdaf4dda78605ffe0f40e2f1dbb57c7390341bed"

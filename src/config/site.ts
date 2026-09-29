@@ -66,7 +66,7 @@ export const site: SiteConfig = {
   shortName: 'Ball vs Ball',
   description:
     'Complete Ball vs Ball wiki with working codes, ball tier list, beginner guides, ball families, and best ball stats. Verified daily.',
-  domain: 'ballvsball.net',
+  domain: 'ballvsball.org',
   tagline: 'Everything for Roblox Ball vs Ball — codes, tier list, and ball guides',
   legalNotice:
     'Ball vs Ball Wiki is a fan-made community site. Not affiliated with or endorsed by ATYS 3 or Roblox Corporation.',
