@@ -46,3 +46,11 @@ if (commitSha) {
   fs.writeFileSync(path.join(wellKnown, 'anvilwiki-deploy.txt'), commitSha, 'utf8');
   console.log('[IndexNow] Wrote dist/.well-known/anvilwiki-deploy.txt');
 }
+
+// Compatibility alias: copy sitemap-index.xml -> sitemap.xml so /sitemap.xml never 404s
+const sitemapIndex = path.join(dist, 'sitemap-index.xml');
+const sitemapAlias = path.join(dist, 'sitemap.xml');
+if (fs.existsSync(sitemapIndex)) {
+  fs.copyFileSync(sitemapIndex, sitemapAlias);
+  console.log('[Sitemap] Created dist/sitemap.xml alias for sitemap-index.xml');
+}
