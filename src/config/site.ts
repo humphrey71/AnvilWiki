@@ -62,35 +62,29 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: 'Anvil Quest Wiki',
-  shortName: 'AQ Wiki',
+  name: 'Ball vs Ball Wiki',
+  shortName: 'Ball vs Ball',
   description:
-    'Complete Anvil Quest wiki with boss guides, tier lists, codes, item locations, and beginner tips. Every guide carries a last-verified date.',
-  domain: 'anvil.wiki',
-  tagline: 'Your forge for everything Anvil Quest',
+    'Complete Ball vs Ball wiki with working codes, ball tier list, beginner guides, ball families, and best ball stats. Verified daily.',
+  domain: 'ballvsball.net',
+  tagline: 'Everything for Roblox Ball vs Ball — codes, tier list, and ball guides',
   legalNotice:
-    'Anvil Quest Wiki is a fan-made community site. Not affiliated with or endorsed by the game developer.',
-  // 👉 APPLY TEMPLATE: set a real address if you run no social channels —
+    'Ball vs Ball Wiki is a fan-made community site. Not affiliated with or endorsed by ATYS 3 or Roblox Corporation.',
+  // Set a real address if you run no social channels —
   // the contact page renders it as a mailto link.
   contactEmail: '',
   social: {
-    official: 'https://example.com/anvil-quest',
-    discord: 'https://discord.gg/example',
-    youtube: 'https://youtube.com/@example',
-    twitter: 'https://twitter.com/example',
-    reddit: 'https://reddit.com/r/anvilquest',
+    official: 'https://www.roblox.com/games/120677464161405/Ball-VS-Ball',
   },
-  // 👉 APPLY TEMPLATE: point these at the game's real canonical pages.
   sameAs: [
-    'https://example.com/anvil-quest',
-    'https://en.wikipedia.org/wiki/Anvil_Quest',
+    'https://www.roblox.com/games/120677464161405/Ball-VS-Ball',
   ],
   game: {
-    name: 'Anvil Quest',
+    name: 'Ball vs Ball',
     platform: 'Roblox',
-    developer: 'Forge Studios',
-    genre: 'Fantasy RPG',
-    releaseDate: '2026-01-15',
+    developer: 'ATYS 3',
+    genre: 'Physics PvP / Arena Battler',
+    releaseDate: '2026-08-20',
   },
   // hero.webp is 1200×630 (the recommended OG share aspect ratio).
   ogImageWidth: 1200,

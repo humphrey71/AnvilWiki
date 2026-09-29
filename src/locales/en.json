@@ -1,18 +1,17 @@
 {
   "$schema": "../../docs/home.schema.json",
   "site": {
-    "name": "Anvil Quest Wiki",
-    "shortName": "AQ Wiki",
-    "description": "Complete Anvil Quest wiki with boss guides, tier lists, codes, item locations, and beginner tips. Every guide carries a last-verified date.",
-    "tagline": "Your forge for everything Anvil Quest",
-    "legalNotice": "Anvil Quest Wiki is a fan-made community site. Not affiliated with or endorsed by the game developer."
+    "name": "Ball vs Ball Wiki",
+    "shortName": "Ball vs Ball",
+    "description": "Complete Ball vs Ball wiki with working codes, ball tier list, beginner guides, ball families, and best ball stats. Verified daily.",
+    "tagline": "Everything for Roblox Ball vs Ball — codes, tier list, and ball guides",
+    "legalNotice": "Ball vs Ball Wiki is a fan-made community site. Not affiliated with or endorsed by ATYS 3 or Roblox Corporation."
   },
   "nav": {
     "home": "Home",
-    "bosses": "Bosses",
-    "guides": "Guides",
-    "items": "Items",
     "codes": "Codes",
+    "balls": "Balls",
+    "guides": "Guides",
     "toggleTheme": "Toggle theme",
     "menu": "Menu",
     "close": "Close",
@@ -123,33 +122,29 @@
     "paginationAria": "Article pagination"
   },
   "overview": {
-    "bosses": {
-      "overviewTitle": "All Bosses",
-      "overviewDescription": "Complete strategy guides for every boss in Anvil Quest, including attack patterns, weaknesses, and recommended loadouts."
+    "codes": {
+      "overviewTitle": "All Codes",
+      "overviewDescription": "Active Ball vs Ball codes for free coins and rerolls. Verified daily."
+    },
+    "balls": {
+      "overviewTitle": "All Balls",
+      "overviewDescription": "Complete Ball database with abilities, families, tiers, damage stats, and counter tactics."
     },
     "guides": {
       "overviewTitle": "All Guides",
-      "overviewDescription": "In-depth tutorials covering progression, crafting, combat mechanics, and advanced strategies for Anvil Quest."
-    },
-    "items": {
-      "overviewTitle": "All Items",
-      "overviewDescription": "Comprehensive item database with locations, stats, rarity tiers, and crafting recipes."
-    },
-    "codes": {
-      "overviewTitle": "All Codes",
-      "overviewDescription": "Active Anvil Quest codes for free coins, gems, and exclusive items. Verified daily."
+      "overviewDescription": "In-depth tutorials covering combat mechanics, tier lists, beginner strategies, and ball families."
     }
   },
   "home": {
     "meta": {
-      "title": "Anvil Quest Wiki - Complete Boss Guides, Codes & Tier Lists",
-      "description": "The most complete Anvil Quest wiki. Boss strategies, active codes, item locations, tier lists, and beginner guides. Every page shows when it was last verified."
+      "title": "Ball vs Ball Wiki - Codes, Tier List & Strategy Guides",
+      "description": "The most complete Roblox Ball vs Ball wiki. Active codes, ball tier lists, ball database, mechanics, and beginner guides. Every page shows when it was last verified."
     },
     "hero": {
       "badge": "Fan-Made Community Wiki",
-      "title": "Anvil Quest Wiki",
-      "description": "Your complete guide to Anvil Quest. Boss strategies, active codes, item locations, tier lists, and everything you need to master the forge.",
-      "ctaPrimary": "Play Anvil Quest",
+      "title": "Ball vs Ball Wiki",
+      "description": "Your complete guide to Roblox Ball vs Ball. Active codes, ball tier lists, ball database, family matchups, and beginner tips to win 1v1 arena battles.",
+      "ctaPrimary": "Play Ball vs Ball",
       "ctaSecondary": "Browse Guides",
       "videoId": ""
     },
@@ -158,35 +153,35 @@
     },
     "start": {
       "badge": "Start Here",
-      "title": "Your Anvil Quest Journey",
+      "title": "Your Ball vs Ball Journey",
       "cards": [
         {
           "number": "1",
           "title": "Beginner Guide",
-          "description": "New to Anvil Quest? Start here with the essential mechanics, controls, and your first hour walkthrough.",
+          "description": "New to Ball vs Ball? Learn trajectory aiming, arena physics, and early gacha strategies.",
           "icon": "lucide:book-open",
           "href": "/guides/beginner-guide"
         },
         {
           "number": "2",
           "title": "Active Codes",
-          "description": "Redeem the latest codes for free coins, gems, and exclusive cosmetic items.",
+          "description": "Redeem the latest codes for free coins to unlock and upgrade high-tier balls.",
           "icon": "lucide:gift",
-          "href": "/codes"
+          "href": "/codes/all-codes"
         },
         {
           "number": "3",
-          "title": "Boss Strategies",
-          "description": "Complete guides for every boss with attack patterns, weaknesses, and recommended loadouts.",
-          "icon": "lucide:swords",
-          "href": "/bosses"
+          "title": "Ball Tier List",
+          "description": "Comprehensive rankings for all 42 balls from S to C based on damage and consistency.",
+          "icon": "lucide:list-ordered",
+          "href": "/guides/ball-tier-list"
         },
         {
           "number": "4",
-          "title": "Weapon Tier List",
-          "description": "Ranking every weapon from S to C based on DPS, utility, and synergy.",
-          "icon": "lucide:list-ordered",
-          "href": "/guides/weapon-tier-list"
+          "title": "Conductor Ball Guide",
+          "description": "Master the chain lightning mechanics and counter strategies for the top S-tier ball.",
+          "icon": "lucide:circle-dot",
+          "href": "/balls/conductor-ball"
         }
       ]
     },
@@ -195,20 +190,20 @@
       "title": "Most Read This Week",
       "quickLinks": [
         {
-          "label": "Emberfang Boss Guide",
-          "href": "/bosses/emberfang"
+          "label": "Ball Tier List",
+          "href": "/guides/ball-tier-list"
         },
         {
-          "label": "Best Weapons Tier List",
-          "href": "/guides/weapon-tier-list"
+          "label": "All Active Codes",
+          "href": "/codes/all-codes"
         },
         {
           "label": "Beginner Guide",
           "href": "/guides/beginner-guide"
         },
         {
-          "label": "All Active Codes",
-          "href": "/codes"
+          "label": "Laser Ball Guide",
+          "href": "/balls/laser-ball"
         }
       ]
     },
@@ -218,156 +213,153 @@
       "modules": [
         {
           "order": 1,
-          "name": "Anvil Quest Codes",
-          "description": "Active codes for free coins, gems, and exclusive items. Updated daily.",
-          "href": "/codes",
+          "name": "Ball vs Ball Codes",
+          "description": "Active codes for free coins and summons. Updated and tested daily.",
+          "href": "/codes/all-codes",
           "displayType": "badge-list",
           "highlights": [
             {
-              "label": "HEARTHFIRE-2026",
-              "detail": "+600 Gold · expires Oct 31",
+              "label": "upd5",
+              "detail": "+100 Coins · Latest patch",
               "badge": "Active"
             },
             {
-              "label": "EMBERFALL-2026",
-              "detail": "+400 Gold · expires Sep 30",
+              "label": "upd4",
+              "detail": "+100 Coins · Update 4",
               "badge": "Active"
             },
             {
-              "label": "ASHENKEEP",
-              "detail": "Ashen Keep cosmetic set",
+              "label": "upd3",
+              "detail": "+100 Coins · Update 3",
               "badge": "Active"
             },
             {
-              "label": "NEWPLAYER",
-              "detail": "Starter bundle (new accounts)",
+              "label": "upd2",
+              "detail": "+100 Coins · Update 2",
+              "badge": "Active"
+            },
+            {
+              "label": "upd1",
+              "detail": "+100 Coins · Launch release",
               "badge": "Active"
             }
           ]
         },
         {
           "order": 2,
-          "name": "Boss Strategies",
-          "description": "Complete guides for every boss with attack patterns and weaknesses.",
-          "href": "/bosses",
+          "name": "Top S-Tier Balls",
+          "description": "In-depth breakdowns for meta-defining balls with unique abilities.",
+          "href": "/balls",
           "displayType": "labeled-cards",
           "highlights": [
             {
-              "label": "Emberfang",
-              "detail": "Frost warden, early-game gatekeeper"
+              "label": "Conductor Ball",
+              "detail": "S-Tier chain lightning powerhouse"
             },
             {
-              "label": "Stormcaller",
-              "detail": "Fire titan, mid-game DPS check"
+              "label": "Laser Ball",
+              "detail": "Wall-projected laser beam hazard grids"
             },
             {
-              "label": "Voidking",
-              "detail": "Final boss, requires full prep"
+              "label": "Vampire Ball",
+              "detail": "High-sustain collision life steal"
             }
           ]
         },
         {
           "order": 3,
-          "name": "Progression Guides",
-          "description": "Leveling routes, class builds, and endgame preparation.",
-          "href": "/guides",
+          "name": "PvP Strategy Steps",
+          "description": "How to progress from novice to seasoned arena champion.",
+          "href": "/guides/beginner-guide",
           "displayType": "steps",
           "highlights": [
             {
               "label": "1",
-              "detail": "Pick a starting class"
+              "detail": "Redeem active promo codes"
             },
             {
               "label": "2",
-              "detail": "Clear the tutorial forge"
+              "detail": "Roll Gacha for S/A-tier balls"
             },
             {
               "label": "3",
-              "detail": "Unlock the Shattered Isles"
+              "detail": "Aim bank shots off side walls"
             },
             {
               "label": "4",
-              "detail": "Defeat your first world boss"
+              "detail": "Deplete all 3 opponent hearts"
             }
           ]
         },
         {
           "order": 4,
-          "name": "Weapon Tier List",
-          "description": "Ranking every weapon from S to C based on DPS, utility, and synergy.",
-          "href": "/guides/weapon-tier-list",
+          "name": "Ball Tier Rankings",
+          "description": "Ranking all 42 spheres from S to C based on damage, consistency, and counters.",
+          "href": "/guides/ball-tier-list",
           "displayType": "ranked-grid",
           "highlights": [
             {
               "label": "S",
-              "detail": "Voidforge Blade, Stormcaller"
+              "detail": "Conductor, Laser, Vampire, Zone, Shackles"
             },
             {
               "label": "A",
-              "detail": "Emberclaw, Frostpike"
+              "detail": "Spider, Hive, Fibonacci, Black Hole"
             },
             {
               "label": "B",
-              "detail": "Ironwood Bow, Mace of Dawn"
+              "detail": "Cannon, Magnet, Ice, Boulder"
             },
             {
               "label": "C",
-              "detail": "Starter weapons"
+              "detail": "Starter Ball, Heavy Ball"
             }
           ]
         },
         {
           "order": 5,
           "name": "Update History",
-          "description": "Major patches and events, newest first.",
+          "description": "Major patches and code drops from developer ATYS 3.",
           "href": "/recent",
           "displayType": "timeline",
           "highlights": [
             {
-              "label": "v2.5",
-              "detail": "New raid: Shadowforge released",
+              "label": "UPD5",
+              "detail": "Latest balance update and code release",
               "badge": "Latest"
             },
             {
-              "label": "v2.4",
-              "detail": "Rebalanced all S-tier weapons"
+              "label": "UPD4",
+              "detail": "New sphere abilities and rewards"
             },
             {
-              "label": "v2.3",
-              "detail": "Added 3 new bosses"
+              "label": "UPD3",
+              "detail": "Physics balance and bounce tuning"
             },
             {
-              "label": "v2.2",
-              "detail": "Launched season pass system"
+              "label": "UPD2",
+              "detail": "Gacha shop expansion"
             }
           ]
         },
         {
           "order": 6,
-          "name": "Video Guides",
-          "description": "Watch the best Anvil Quest walkthroughs and boss fights.",
-          "href": "/guides",
-          "displayType": "video-grid",
+          "name": "Ball Families",
+          "description": "Master the distinct physics archetypes across the three ball families.",
+          "href": "/guides/ball-families-guide",
+          "displayType": "steps",
           "highlights": [
             {
-              "title": "Beginner Walkthrough",
-              "youtubeId": "dQw4w9WgXcQ",
-              "duration": "12:34"
+              "label": "1",
+              "detail": "Ball — Standard rebounds & sustain"
             },
             {
-              "title": "All Bosses Ranked",
-              "youtubeId": "aaaaaaaaaaa",
-              "duration": "18:42"
+              "label": "2",
+              "detail": "Explosion — Heavy blast area denial"
             },
             {
-              "title": "Speedrun Guide",
-              "youtubeId": "bbbbbbbbbbb",
-              "duration": "25:10"
-            },
-            {
-              "title": "Hidden Secrets",
-              "youtubeId": "ccccccccccc",
-              "duration": "9:15"
+              "label": "3",
+              "detail": "Flyer — Aerial hazard immunity"
             }
           ]
         }
@@ -375,39 +367,35 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "description": "Quick answers to the most common questions about Anvil Quest.",
+      "description": "Quick answers to the most common questions about Roblox Ball vs Ball.",
       "items": [
         {
-          "question": "What is Anvil Quest?",
-          "answer": "Anvil Quest is a fantasy RPG on Roblox where you play as a blacksmith apprentice forging weapons and battling bosses across the Shattered Isles. It launched in January 2026 and has over 12 million visits."
+          "question": "What is Roblox Ball vs Ball?",
+          "answer": "Ball vs Ball is a competitive physics-based arena battler on Roblox created by ATYS 3, where players collect unique bouncy balls to battle in 1v1 and 2v2 duels."
         },
         {
-          "question": "Which class should beginners pick in Anvil Quest?",
-          "answer": "Warrior is the most beginner-friendly class thanks to high HP and simple mechanics. Once you understand the game, Rogue offers the highest damage output for experienced players."
+          "question": "Which ball is best for beginners in Ball vs Ball?",
+          "answer": "Laser Ball and Vampire Ball are the premier starter choices from the coin Gacha, offering high sustained damage and life-steal survivability without requiring paid packs."
         },
         {
-          "question": "How do I redeem codes in Anvil Quest?",
-          "answer": "Open the game, click the settings gear in the top-right, paste your code into the 'Redeem Code' field, and hit confirm. Codes are case-sensitive."
+          "question": "How do I redeem codes in Ball vs Ball?",
+          "answer": "Click the yellow gift box icon in the top-left corner of the screen, select Codes from the menu, paste your code, and click Redeem."
         },
         {
-          "question": "Is Anvil Quest free to play?",
-          "answer": "Yes, Anvil Quest is completely free on Roblox. There are optional cosmetic microtransactions, but they do not affect gameplay balance."
-        },
-        {
-          "question": "How often does Anvil Quest update?",
-          "answer": "Forge Studios releases major content updates roughly every two weeks, with smaller hotfixes in between. New bosses and codes are typically added with each major patch."
+          "question": "How do hearts and rounds work in Ball vs Ball?",
+          "answer": "Each combatant starts with three hearts. When your ball loses all HP in a round, your character takes direct damage and loses one heart. First player to zero hearts loses."
         }
       ]
     },
     "closingCta": {
-      "title": "Ready to Master the Forge?",
-      "description": "Bookmark this wiki and check back daily for new codes, boss guides, and tier list updates.",
-      "primary": "Play Anvil Quest",
-      "secondary": "Join Our Discord"
+      "title": "Ready to Dominate the Arena?",
+      "description": "Bookmark this wiki and check back daily for new codes, tier list shifts, and ball counter guides.",
+      "primary": "Play Ball vs Ball",
+      "secondary": "Ball Tier List"
     }
   },
   "footer": {
-    "playGame": "Play Anvil Quest",
+    "playGame": "Play Ball vs Ball",
     "officialDiscord": "Official Discord",
     "officialYoutube": "Official YouTube",
     "officialTwitter": "Official Twitter",
@@ -418,7 +406,7 @@
     "termsOfService": "Terms of Service",
     "copyright": "Copyright",
     "contact": "Contact",
-    "copyrightText": "© 2026 Anvil Quest Wiki. Fan-made, not affiliated with Forge Studios.",
+    "copyrightText": "© 2026 Ball vs Ball Wiki. Fan-made community site, not affiliated with ATYS 3 or Roblox Corporation.",
     "community": "Community",
     "legal": "Legal"
   }
