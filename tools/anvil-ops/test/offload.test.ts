@@ -50,4 +50,11 @@ describe('watchdog timeout self-rescue guidance', () => {
   it('audit guidance stays lock-free (audit never takes the submit lock)', () => {
     expect(watchdogTimeoutFix('audit', process.cwd())).not.toMatch(/lock/i);
   });
+
+  it('insights guidance stays lock-free and names its own CLI equivalent', () => {
+    // insights is offloaded like audit but never takes the submit lock; the
+    // watchdog / exit guidance must point at `anvil-ops insights`, not the
+    // audit/submit pair.
+    expect(watchdogTimeoutFix('insights', process.cwd())).not.toMatch(/lock/i);
+  });
 });

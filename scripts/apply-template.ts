@@ -34,12 +34,13 @@
 
 import * as fs from 'node:fs';
 import { todayIso } from './lib/today';
-import { hexToHsl as hexToHslPure, hslToHex } from '~/lib/covers';
+import { hexToHsl as hexToHslPure, hslToHex, parseBrandHsl } from '~/lib/covers';
 import * as path from 'node:path';
 import { createLinePrompt, type LinePrompt } from './lib/prompt';
 import { containsControlChar } from './lib/delimited';
 import { walkDirs, walkFiles } from './lib/walk';
 import { ensureIndexNowKey, INDEXNOW_KEY_PATH } from './lib/indexnow';
+import { writeAtomic } from './lib/atomic';
 import {
   DEMO_ARTICLE_IMAGES,
   DEMO_COVERS,
@@ -62,6 +63,7 @@ import {
   rewriteSiteTs as rewriteSiteTsBlock,
   rewriteWranglerVars,
   slugify,
+  stripDemoAuthors,
   tsEscape,
   UI_IMPORT_BLOCK_RE,
   type SkinInput,
@@ -140,27 +142,9 @@ function warnOnLeftoverAnswers(): void {
 const REL = (p: string) => path.relative(ROOT, p);
 const read = (p: string) => fs.readFileSync(path.resolve(ROOT, p), 'utf8');
 
-/**
- * Atomic write: same-directory temp file + rename. A process killed mid-write
- * (Ctrl-C, CI timeout) leaves a `.<name>.tmp` breadcrumb, never a truncated
- * site.ts / wrangler.toml / locale JSON — same pattern sync-codes.ts uses for
- * MDX pages. rename within one directory is atomic on POSIX and Windows.
- */
-function writeAtomic(target: string, content: string): void {
-  const abs = path.resolve(ROOT, target);
-  const tmp = path.join(path.dirname(abs), `.${path.basename(abs)}.tmp`);
-  try {
-    fs.writeFileSync(tmp, content, 'utf8');
-    fs.renameSync(tmp, abs);
-  } catch (err) {
-    try {
-      fs.rmSync(tmp, { force: true });
-    } catch {
-      // best-effort cleanup — the original error matters more
-    }
-    throw err;
-  }
-}
+// Atomic write (same-directory temp + rename) lives in lib/atomic.ts, shared
+// with new-locale.ts — killed processes leave a .tmp breadcrumb, never a
+// truncated config file.
 
 const write = (p: string, content: string) => {
   if (DRY_RUN) {
@@ -182,6 +166,23 @@ function hexToHsl(hex: string): { h: number; s: number; l: number } {
 
 const hslStr = (c: { h: number; s: number; l: number }, lOffset: number) =>
   `${c.h} ${c.s}% ${Math.max(0, Math.min(100, c.l + lOffset))}%`;
+
+/**
+ * The CURRENT theme color as hex, parsed from globals.css :root --brand via
+ * the shared covers lib (parseBrandHsl + hslToHex — the same pair
+ * rewriteManifest uses, so the manifest round-trips). Re-run default for the
+ * theme-color prompt: an enter-through keeps the site's color instead of
+ * resetting it to the first-run orange. Null when unreadable — the caller
+ * warns and falls back to the historical first-run default.
+ */
+function currentThemeHex(): string | null {
+  try {
+    const hsl = parseBrandHsl(read('src/styles/globals.css'));
+    return hsl ? hslToHex(hsl.h, hsl.s, hsl.l) : null;
+  } catch {
+    return null;
+  }
+}
 
 /** Dim a string for dry-run output (ANSI escape; no chalk dependency). */
 const dim = (s: string) => `\x1b[2m${s}\x1b[0m`;
@@ -210,8 +211,10 @@ async function ask(rl: LinePrompt, question: string, fallback?: string): Promise
 }
 
 async function askBool(rl: LinePrompt, question: string, fallback = false): Promise<boolean> {
+  // Both branches normalize case: a scripted 'Y' must mean Yes exactly like a
+  // typed 'Y' does (the scripted branch used to trim only and read as No).
   const answer = scripted
-    ? takeScriptedAnswer(question)
+    ? takeScriptedAnswer(question).toLowerCase()
     : (await rl.ask(`${question} [${fallback ? 'Y/n' : 'y/N'}]: `)).trim().toLowerCase();
   if (!answer) return fallback;
   return answer === 'y' || answer === 'yes';
@@ -243,7 +246,13 @@ function rewriteNavigationTs(input: SkinInput): string {
         `  { key: '${c.key}', path: '/${c.key}', icon: '${c.icon}', isContentType: true, order: ${i + 1} }`,
     )
     .join(',\n');
-  const newArray = `export const NAVIGATION_CONFIG: NavigationItem[] = [\n${items},\n];`;
+  // An empty selection must produce a VALID empty array — the naive
+  // `[\n${items},\n]` spelled a leading-comma holey literal that did not
+  // parse as NavigationItem[].
+  const newArray =
+    input.categories.length === 0
+      ? 'export const NAVIGATION_CONFIG: NavigationItem[] = [];'
+      : `export const NAVIGATION_CONFIG: NavigationItem[] = [\n${items},\n];`;
   const navRe = /export const NAVIGATION_CONFIG: NavigationItem\[\] = \[[\s\S]*?\];/;
   if (!navRe.test(src)) {
     console.error(`❌ Could not find NAVIGATION_CONFIG in ${filePath}. Aborting.`);
@@ -652,7 +661,21 @@ async function main() {
   console.log('\n' + '━'.repeat(60));
   console.log('Theme color');
   console.log('━'.repeat(60));
-  const themeHex = await ask(rl, 'Theme color (#rrggbb)', '#f97316');
+  // Re-run = keep the CURRENT color as the default (the other 11 identity
+  // prompts do the same via rerunPromptDefaults); a first run keeps the
+  // historical demo orange.
+  let themeDefault = '#f97316';
+  if (rerunDefaults !== null) {
+    const current = currentThemeHex();
+    if (current !== null) {
+      themeDefault = current;
+    } else {
+      console.warn(
+        '⚠️ Could not read the current theme color from src/styles/globals.css — defaulting to #f97316.',
+      );
+    }
+  }
+  const themeHex = await ask(rl, 'Theme color (#rrggbb)', themeDefault);
   const preview = hexToHsl(themeHex);
   console.log(`   → ${themeHex} = HSL(${preview.h}, ${preview.s}%, ${preview.l}%)`);
 
@@ -927,15 +950,24 @@ async function main() {
   }
 
   // Reset the demo author registry so fork sites don't inherit demo authors.
+  // The regex lives in lib/apply-rewrites.ts (stripDemoAuthors) so the
+  // contract test can pin it against the real file and against setup.yml's
+  // inline python copy.
   const authorsPath = 'src/config/authors.ts';
   if (fs.existsSync(path.resolve(ROOT, authorsPath))) {
     const src = read(authorsPath);
-    const cleaned = src.replace(/\n\s*\/\/ DEMO .*?\n\s*'[^']+'.*?\{[^}]*\},\n/, '\n');
+    const { cleaned, changed } = stripDemoAuthors(src);
     // Only claim success when the demo block actually matched — an upstream
-    // authors.ts format change must not print a false ✅.
-    if (cleaned !== src) {
+    // authors.ts format change must not print a false ✅, and a silent no-op
+    // (already removed on a previous run, or the format drifted) must not
+    // pass unnoticed either.
+    if (changed) {
       write(authorsPath, cleaned);
       console.log('   ✅ src/config/authors.ts (demo author removed)');
+    } else {
+      console.warn(
+        '⚠️ No demo author block matched in src/config/authors.ts — either already removed on a previous run, or the file format changed. Verify the author registry manually.',
+      );
     }
   }
 
