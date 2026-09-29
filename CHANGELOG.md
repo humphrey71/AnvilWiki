@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.36.1] - 2026-09-27
+
+### Fixed
+
+- **rewriteSiteTs 重跑值感知化：site.ts 手填的可选字段不再被静默清空**（M1）：模板在 site.ts 写死 `contactEmail: ''` 与裸 `social { official }`，重跑 Initialize/`pnpm apply-template` 会用空白模板整体重写 `export const site` 块——fork 用户手填的 contactEmail、social.discord/youtube/twitter/reddit、sameAs、defaultAuthor 全部静默消失（wrangler `[vars]` v2.29.0 同类洞在 site.ts 面的残留）。现读取现值（与 `parseSiteTsIdentity` 同 `tsField` 锚点，双引号手改文件同样读得回），非空且非 demo 占位（新注册表 `DEMO_SITE_OPTIONAL_VALUES`，与 `rewriteWranglerVars` 同一值感知哲学）的字段随重写原样带回；present-but-unreadable（压缩单行对象、非字面量数组项）逐字段 stderr ⚠️ 后才丢弃——破坏性方向永不静默。demo 首跑输出与旧模板字节一致（占位照常清空、零多余产出），注册表导出供契约测试对 shipped site.ts 做漂移守卫。
+- **rewriteLocaleJson 重跑保留用户手写 overview 文案，home 覆盖非骨架现值前 stderr ⚠️**（M2）：overview 原先每次重跑整体替换为生成的占位文案（v2.6.3 有意保留的语义，理由=防 demo 游戏文案泄漏）——用户手写的分类页标题/描述被静默打回模板腔。现以 `isDemoLocaleContent`（locale 删除路径同款判定）为门控：仍带 demo 站名=首跑，整体覆盖语义原样保留；非 demo=重跑，同 key 的手写 `overviewTitle` 保留、`overviewDescription` 仅在真正编辑过时保留（上一轮占位经 `isPlaceholderOverviewDesc` 判定重新生成）——防泄漏与保文案两全。home 预设仍是每轮显式选择、仍然覆盖，但覆盖非机器骨架现值（手写 FAQ 项或自定义高亮标签）前先 stderr ⚠️ 并指路 preset "keep"，与 demo 内容清理同一 warn-before-destructive 契约。
+- **check-content 图片包裹链接对规则 4/5/6 隐形根治**（M3）：`[![alt](/images/a.webp)](/bosses/x/)` 形态（封面图包页链）原先被旧内联负向后顾正则从外层 `[` 锚定、捕获到的是图片资产 URL——页链既不进尾斜杠/语言前缀检查也不计内链数，规则 4/5/6 对这类链接整体失明。现提取逻辑抽为新纯函数 `scripts/lib/link-scan.ts`（剥离图片语法后提取页链），资产 href 经共享豁免表（低-19）退出计数与形态检查。
+- **sync-codes 新增 reactivated 独立统计桶，expired→active 复活码 CLI 打 ⚠️**（M4）：`MergeStats` 原先只有 added/updated/expiredFlipped/unchanged，expired→active 的复活混进 updated 桶零可见性；而游戏周年复刻复活旧码是合法场景，「复活码」同时也是 CSV 过期/误读行的经典特征。现复活仍应用不拒绝（`reactivated` 独立计数），CLI 对每一例打 ⚠️——信号而非意外；`tests/sync-codes.test.ts` 补齐该方向契约测试 ×2。
+- **其余低级修复（低-1…低-27，共 27 条，五路并行修复批）**：
+  - **初始化/重跑面**：主题色 prompt 重跑默认值从 globals.css 现值反推 hex（首跑默认 `#f97316` 不变）（低-7）；`--answers` 模式 `askBool` 补 `.toLowerCase()`，`'Y'` 现在判 Yes、与交互模式一致（低-8）；空分类时 `rewriteNavigationTs` 产出合法空数组 `[]` 而非 holey 字面量（低-9）；new-post 的 category 输入规范化 + 路径穿越/控制字符拒绝 + frontmatter 引号转义（低-10）；new-locale 改用 lib 单源 locale 校验/标识符注入/标签表 + 原子写（新 `scripts/lib/atomic.ts`），zh-tw/pt-br 不再被拒（低-17，`docs/apply-template.md` 的「`pnpm new-locale` 暂只支持两字母码」旧表述同步更新）；authors.ts demo 清理正则下沉 lib 单源 + cleaned===src 时 stderr ⚠️ + 真实文件契约（低-18）。
+  - **检查脚本面**：check-sitemap 子 sitemap 拉取失败从静默 continue 改为合成失败结果响亮 exit 1（谎言注释修正）（低-1）；check-i18n 非默认 locale 的 `JSON.parse` 包 try/catch，坏 JSON 按模板缺陷计入 missingUiKeys 打同口径 ❌，不再裸堆栈（低-2）；资产扩展名豁免表单源化为新 `scripts/lib/asset-extensions.ts`（check-content/check-links 两表并集逐组裁决，两脚本改 import）（低-19）；check-config domain 正则双引号容差对齐 + template-audit draft 扫描改 frontmatter-only 口径（低-20）；navKeys 正则加前置界定（+注释剥离守卫），check-config 与 template-audit 两处同改（低-21）。
+  - **sync-codes/bulk-new-posts 面**：表头重复列（`code,code`）从静默读第一列改为响亮 error，sync-codes lib 与 bulk-new-posts 两处同步（低-5）；`parseCodesBlock` 拒绝既有 frontmatter 中的重复 code（原 merge last-wins 静默折叠 + 统计 unchanged）（低-6）；bulk-new-posts 新文件直写改同目录 tmp+rename 原子写，崩溃不再留下会被重跑 `existsSync` 永久跳过的截断文件（低-4）；新建 `scripts/lib/slugify.ts`，Unicode slugify 连同 doc 注释逐字搬出 bulk-new-posts.ts 改 import（低-22）。
+  - **生成面与站点源**：gen-assets 缓存 manifest 裸 `JSON.parse` 改 try/catch + 全量重生成降级，manifest 写入改 tmp+rename 原子替换（低-3）；新建 `scripts/lib/fonts.ts` 单源化 Noto CJK 下载 URL，从可变 main 分支钉到 release tag Sans2.004，gen-covers/gen-assets 两份重复常量合一（低-23）；gen-assets favicon.svg 的 game initial 直插 SVG `<text>` 前做 XML 转义，`&`/`<` 首字符不再产出非法 XML（低-27）；authors 注册表内部 URL `/about` 补尾斜杠 + seo.test 注册表尾斜杠门禁断言（低-15）；面包屑 JSON-LD 两处 Home item 改用 `homeUrl(locale)` 拼接 + 补尾斜杠断言（低-16）；CookieConsent 升 `z-[60]` 并以注释固化层级契约（低-24）；404 页五条英文硬编码收进 `shared.notFound*` JSON 键（en/ja 双语），组件改用键值（低-25）。
+  - **workflow 与 anvil-ops 面**：content-pipeline.yml `gh issue close` 的 `|| true` 改 `|| echo "::warning::close failed — previous audit issue left open"`，close 失败不再静默（低-12）；setup.yml 补 `concurrency: { group: setup-init, cancel-in-progress: false }`，双击触发的并发 Initialize 不再竞写 `chore/init-from-template` 分支（低-13）；anvil-ops 的 insights MCP 工具不再主线程直调 `collectInsights`，改走 worker 线程 offload（新增 insights 通道），对齐 audit 工具接线（低-14）；六个 workflow 文件共 8 处 `pnpm/action-setup` 的 `version: 11.1.1` 输入删除，pnpm 版本单源化到根 package.json 的 `packageManager` 字段，`tests/workflows.test.ts` 补对齐契约防回退（低-26）。
+
+## [2.36.0] — 2026-09-23
+
 ### Added
 
 - **IndexNow 新 fork 零环境变量初始化**：`Initialize AnvilWiki` 与本地 `pnpm apply-template` 现在都通过同一个 helper 在仓库根首次生成 `.indexnow-key`（64 位 hex），重跑严格复用；新增 `pnpm init-indexnow-key` 供旧站迁移或明确轮换使用。key 按 IndexNow 协议本来就需要公开为 `/<key>.txt`，因此仓库文件不是 secret。postbuild 与 `pnpm submit-indexnow` 均优先读取这个明确单文件来源，v2.34.0 删除的 `public/*.txt` 模糊扫描与提交时临时生成流程继续保持删除状态。
@@ -15,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **IndexNow 自动 workflow 不再要求新 fork 手工配置两份 Repository/Cloudflare Variables**：成功的 `main` push CI 后先 checkout 并探测配置；key 优先 `.indexnow-key`、旧 `INDEXNOW_KEY` variable 仅作兼容回退，站点地址按 `wrangler.toml` → `src/config/site.ts` → 旧 `SITE_URL` variable 顺序解析，避免遗留 variable 覆盖仓库现值。未初始化/缺配置的 fork 在安装依赖前退出且零 IndexNow 请求；已有 env-backed 站点无需迁移即可继续工作。原有「等待精确 Cloudflare commit → 校验线上 key → 读取生产 sitemap → 429/5xx 重试」安全链保持不变。
 - **IndexNow 文档改为零配置主路径**：deployment、apply-template、学习手册双语 integrations/get-on-google/命令速查、PRD、`.env.example` 与 AGENTS 同步；旧 `INDEXNOW_KEY` 明确降为兼容覆盖，不再作为新站推荐配置。IndexNow 单测新增 3 条（根测试 322→325），真实 apply-template E2E 额外钉住「首次生成 → 重跑不换 key → postbuild 输出同一 `/<key>.txt`」。
+- **文档保鲜批**：docs/ads.md「Adsterra 允许这样挂吗（政策边界）」与手册课 22 enable-ads（en+zh）接入主路改写（合规三条件=广告可见/按原始尺寸/一份代码一个位；Popunder/Social Bar 属行为触发型格式不进 iframe，head 直贴段同步）；PRD §3 架构树运维脚本计数 15→16（`init-indexnow-key` 入枚举，七天文档漂移审计发现、#57 同批漏网）。
 
 ## [2.35.2] — 2026-09-22
 
@@ -1322,7 +1340,9 @@ This release covers everything since v0.2.0: the full PRD roadmap (v1.1–v2.0) 
 - Docs: PRD (1600+ lines), deployment, apply-template (4-step guide), content-format, seo, ads, migration-from-nextjs
 - Build: 27 pages, typecheck 0 errors
 
-[Unreleased]: https://github.com/PNGTRID/AnvilWiki/compare/v2.35.2...HEAD
+[Unreleased]: https://github.com/PNGTRID/AnvilWiki/compare/v2.36.1...HEAD
+[2.36.1]: https://github.com/PNGTRID/AnvilWiki/compare/v2.36.0...v2.36.1
+[2.36.0]: https://github.com/PNGTRID/AnvilWiki/compare/v2.35.2...v2.36.0
 [2.35.2]: https://github.com/PNGTRID/AnvilWiki/compare/v2.35.1...v2.35.2
 [2.35.1]: https://github.com/PNGTRID/AnvilWiki/compare/v2.35.0...v2.35.1
 [2.35.0]: https://github.com/PNGTRID/AnvilWiki/compare/v2.34.0...v2.35.0

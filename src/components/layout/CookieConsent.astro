@@ -31,10 +31,11 @@ interface Props {
 const { labels, privacyHref, privacyLabel } = Astro.props;
 ---
 
+{/* z-[60]: consent banner always on top — above the QR float (z-50) and both headers (z-40), below the search overlay (z-300). Explicit contract, not DOM-order luck. */}
 <div
   id="cookie-consent"
   hidden
-  class="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card p-4 shadow-lg"
+  class="fixed inset-x-0 bottom-0 z-[60] border-t border-border bg-card p-4 shadow-lg"
   role="dialog"
   aria-live="polite"
   aria-label={labels.title}
