@@ -37,3 +37,18 @@
 - 决定分布：考虑 1（Obby: +1 Laser，9535 评分 9.4 但 autocomplete 全无结果）；不做 7（均为泛词噪音/单条回声）；做 0
 - 到期复查：Island of Madness R1、Combo Critters R1（均为 9/27 手动补测，结果已入表：前者升【做】，后者维持考虑）
 - 异常：无；suggestqueries.google.com 正常；9/29 到期行 Steal a Eggs 已预核 autocomplete（roblox 占位风险高）
+
+## 2026-09-28（定时挖词）
+- 渠道：CrazyGames /new（curl 带 UA 直接可解析，无需浏览器）
+- 新增 5 个候选：考虑 1（Obby: +1 Digging Power Per Click，CG 当天上线 891 评 8.8，「+1 Laser」同系列，autocomplete 零萌芽按早期爆发轨观察，10/01 复查）、不做 4（Nations Royale 被 Mini Royale: Nations 占位；Arrow Slide Puzzle 为 MSN 泛品类词；Matchblast 泛品类+仅64评；Alien Attack Zad 零 autocomplete 且 9/14 已上线非新面孔）
+- 到期复查：今日无到期行（Vox Heroes/Hyper Fliplation R1 已于本日早间轮处理）；9/29 到期 5 行（Steal a Eggs、Kick Brainrot Balls、Spectre Command、Cannon Chaos、1 Speed Keyboard Escape）明日处理
+- 决定分布：考虑 1 / 不做 4；异常：无（Trends 本轮未调用，沿用 429 未测记录）
+
+## 2026-09-30（定时挖词，补记 9/29 日志缺失）
+- 渠道：CrazyGames /new（curl+UA 正常，95 个游戏）→ 新面孔单页 JSON-LD 批量抽查（33 页）→ Google autocomplete 探针 ×30 词。禁 steamdb 按要求未访问
+- 新面孔 22 个，决定分布：考虑 7 / 不做 15
+  - 考虑：+1 Speed Keyboard Obby（9/29 当天 1040 评 9.1，autocomplete 当天现「obby code」codes 萌芽，系列第三作）、Obby Steal an Egg（当天 538 评 8.7，steal-eggs 波浪第二作，仅自身回声）、Stickman Strike Force（当天 817 评 9.0，品牌回声+品类噪音）、Car Seller: Life Simulator（821 评 9.1，apk/mod 疑手游归属）、My Castle: Merge & Story（1198 评 8.9，品牌双回声无噪音）、City Gas Station Simulator（3403 评 9.2，本作词 3 条疑手游归属）、Rodha 2（764 评 9.4，「rodha 2 game/math playground」正向混 CAT 考试噪音）
+  - 不做：OreCrusher（南非矿业公司占位）、Rustlight、The MOO Factory（零 autocomplete+平台内中等）、Zombie War Survival/Movie Star Dress Up/Horror Clown/Spot the Diff/Farm Idle Cut Crop/Delivery Life（品类泛词）、Merge Beach/Amber's Airline（手游归属/旧IP已覆盖）、Test Drive Car Parking（现实购车词）、Bowmasters（大 IP 手游占位）、Unpacking Room（归属模糊）、Merge Elementals（单条判例）
+- 到期复查 7 行：TNT Voxel R2（1040→1448，放缓，0/3 维持）、GYROBLADE R2（1399→1629，平缓，0/3 维持）、Stack City 第7天（455→959 +111%，1/3 维持，BBQ 餐厅词重占位）、Automata Protocol 第7天（606→851，0/3 维持，NieR:Automata 占位）、Combo Critters R2（288→301，1/3 维持，wiki/combinations 攻略词强但 2016 手游归属必须 SERP 核）、1 Speed Keyboard Lucky Escape R1（1482→2010 +35%，1/3 维持，系列词流向新作 Obby）、Obby: +1 Laser R1（slug 未命中数据获取失败，autocomplete 仍零，顺延 10/4）
+- 异常：1) 上轮（9/29 表更）日志条目缺失，本条补记；2) Obby: +1 Laser 已滚出 /new 页且 3 个 slug 变体均未命中，ratingCount 无法更新，下轮用站内搜索修复；3) Lucky Escape codes 词族（9/27 曾现）今探零结果，系列搜索词明显向当天新作「+1 Speed Keyboard Obby」集中——系列作间需求分流首次观测到；4) Trends 本轮未调用，沿用未测记录
+- 复查计划：10/1 Obby: +1 Digging（R1）；10/2 Vox Heroes、Hyper Fliplation（R2）；10/3 新增 7 个考虑 R1；10/4 Obby: +1 Laser 补测；10/7 六行 R2/R3
