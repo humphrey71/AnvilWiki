@@ -33,6 +33,14 @@ permissions:
   contents: write
   pull-requests: write
 
+# One init at a time — two overlapping runs would both force-push the same
+# chore/init-from-template branch and race on its PR. A queue, not a cancel:
+# an in-flight init finishes and opens its PR; the queued run then supersedes
+# it idempotently.
+concurrency:
+  group: setup-init
+  cancel-in-progress: false
+
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -296,7 +304,6 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6
         with:
-          version: 11.1.1
           run_install: false
 
       - name: Setup Node

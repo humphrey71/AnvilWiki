@@ -30,7 +30,7 @@ export const zh: LandingContent = {
   description:
     '开源游戏 wiki 模板 + AI 原生内容工作流:选对游戏、和 AI 对话就能产页、codes 页自动保鲜。Lighthouse 4×100、Cloudflare 免费部署、广告收入 100% 归你。',
   announcement: {
-    text: `AnvilWiki 模板更新日志（v${PROJECT_VERSION}）：IndexNow 对新 fork 零配置——初始化自动生成一份稳定的 .indexnow-key 随仓库提交，main 的 CI 每次成功都自动推送生产 sitemap，不用再给 Cloudflare/GitHub 各配一份变量（老站的环境变量方案原样兼容）。文档保鲜：Adsterra 反欺诈政策边界写清（广告可见、按原始尺寸、一份代码一个位）+ PRD 脚本计数修正。fork 用户 merge 上游、照常 pnpm install 即可。本条为模板发版通告，非站点故障；详情与完整变更见 GitHub Releases。`,
+    text: `AnvilWiki 模板更新日志（v${PROJECT_VERSION}）：第四次全项目三维代码审查修复批落地——31 项全修（中危 4+低危 27）。重跑初始化/apply-template 不再静默清空手填的 site.ts 字段与改写的 overview 文案；CSV 同步复活过期码现在会响亮警告；check-content 能看见图片包裹链接；另有门禁、管道与 workflow 加固，23 个测试套件护航。fork 用户 merge 上游、照常 pnpm install 即可。本条为模板发版通告，非站点故障；详情与完整变更见 GitHub Releases。`,
     href: RELEASES,
     dismissLabel: '关闭公告',
   },

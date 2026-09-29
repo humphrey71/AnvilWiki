@@ -96,6 +96,11 @@
     "sponsorButton": "Support us",
     "notFoundSearchHint": "Try searching the wiki instead.",
     "notFoundPopular": "Popular pages",
+    "notFoundTitle": "404 - Page Not Found",
+    "notFoundDescription": "The page you are looking for does not exist.",
+    "notFoundHeading": "Page Not Found",
+    "notFoundText": "The page you are looking for might have been removed or is temporarily unavailable.",
+    "notFoundBackHome": "Back to home",
     "galleryLabels": {
       "close": "Close",
       "prev": "Previous image",
