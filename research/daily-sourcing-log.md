@@ -52,3 +52,12 @@
 - 到期复查 7 行：TNT Voxel R2（1040→1448，放缓，0/3 维持）、GYROBLADE R2（1399→1629，平缓，0/3 维持）、Stack City 第7天（455→959 +111%，1/3 维持，BBQ 餐厅词重占位）、Automata Protocol 第7天（606→851，0/3 维持，NieR:Automata 占位）、Combo Critters R2（288→301，1/3 维持，wiki/combinations 攻略词强但 2016 手游归属必须 SERP 核）、1 Speed Keyboard Lucky Escape R1（1482→2010 +35%，1/3 维持，系列词流向新作 Obby）、Obby: +1 Laser R1（slug 未命中数据获取失败，autocomplete 仍零，顺延 10/4）
 - 异常：1) 上轮（9/29 表更）日志条目缺失，本条补记；2) Obby: +1 Laser 已滚出 /new 页且 3 个 slug 变体均未命中，ratingCount 无法更新，下轮用站内搜索修复；3) Lucky Escape codes 词族（9/27 曾现）今探零结果，系列搜索词明显向当天新作「+1 Speed Keyboard Obby」集中——系列作间需求分流首次观测到；4) Trends 本轮未调用，沿用未测记录
 - 复查计划：10/1 Obby: +1 Digging（R1）；10/2 Vox Heroes、Hyper Fliplation（R2）；10/3 新增 7 个考虑 R1；10/4 Obby: +1 Laser 补测；10/7 六行 R2/R3
+
+## 2026-10-01（定时挖词）
+- 渠道：CrazyGames /new（curl+UA 正常，70 个游戏，较上轮 95 收缩）→ 新面孔+到期行单页 JSON-LD 批量抽查（9 页）→ Google autocomplete 探针 ×12 词。禁 steamdb 按要求未访问
+- 新面孔 8 个，决定分布：考虑 2 / 不做 6
+  - 考虑：Duck Playground 3D（9/30 当天 1011 评 9.3，当日即有精确 autocomplete 词「duck playground 3d」——入池以来第二例上线当天现精确词，Island of Madness 后首见）、Aura Clicker（当天 427 评 8.9，codes/script/roblox/scratch 词族强，归属疑同名作待 SERP 核）
+  - 不做：Soccer Lat: 3D Football Online（1336 评 9.1 本日平台内最强，但被「soccer latest」词族占位）、Revolution Farm Idle（被《Revolution Idle》farm 词占位）、Panda Food Business（单条判例+foodpanda 商业词）、Eternal Fury（老 IP 判例）、Merge Defense: Army Behind the Wall（Roblox 同名作占位，Nations Royale 判例）、Color Screw Rescue Puzzle（单条+4.7 低分）
+- 到期复查 1 行：Obby: +1 Digging Power Per Click R1（ratingCount 891→1345，3 天 +51% 平台内强；autocomplete 三种拼法仍零结果，判据1未过；Trends 未测。1/3 转好 → 维持考虑，R2 10/5）
+- 异常：1) /new 列表 95→70，Obby: +1 Laser 仍在页外，10/4 到期按计划用站内搜索修复 slug；2) paint-hide slug 游戏更名「Paint Hide → Paper Guys」（9/25 曾记 Paper Guys 无评分，原「Paint Hide 不做」决定不受影响）；3) Duck Playground 3D 上线当天现精确词且当日千评，平台内外信号同日出现的首例，R1 优先看 codes/wiki 萌芽；4) Trends 沿用未测记录
+- 复查计划：10/2 Vox Heroes、Hyper Fliplation（R2）；10/3 七行 R1；10/4 Obby: +1 Laser 补测 + Duck Playground 3D、Aura Clicker R1；10/5 Obby: +1 Digging R2
