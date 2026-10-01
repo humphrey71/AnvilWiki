@@ -61,3 +61,11 @@
 - 到期复查 1 行：Obby: +1 Digging Power Per Click R1（ratingCount 891→1345，3 天 +51% 平台内强；autocomplete 三种拼法仍零结果，判据1未过；Trends 未测。1/3 转好 → 维持考虑，R2 10/5）
 - 异常：1) /new 列表 95→70，Obby: +1 Laser 仍在页外，10/4 到期按计划用站内搜索修复 slug；2) paint-hide slug 游戏更名「Paint Hide → Paper Guys」（9/25 曾记 Paper Guys 无评分，原「Paint Hide 不做」决定不受影响）；3) Duck Playground 3D 上线当天现精确词且当日千评，平台内外信号同日出现的首例，R1 优先看 codes/wiki 萌芽；4) Trends 沿用未测记录
 - 复查计划：10/2 Vox Heroes、Hyper Fliplation（R2）；10/3 七行 R1；10/4 Obby: +1 Laser 补测 + Duck Playground 3D、Aura Clicker R1；10/5 Obby: +1 Digging R2
+
+## 2026-10-02（定时挖词）
+- 渠道：CrazyGames /new（curl+UA 正常，70 个游戏，与上轮持平）→ 新面孔单页 JSON-LD 抽查（4 页）+ 到期行单页 2 页 → Google autocomplete 探针 ×11 词。禁 steamdb 按要求未访问
+- 新面孔 4 个（均 10/1 上线），决定分布：考虑 0 / 不做 4 / 做 0
+  - 不做：Flux GP: Anti-Gravity Racing（543 评 9.3，flux 词族被 AI 图像模型 FLUX/GPU 硬件词占位，「flux gp anti gravity」零结果）、Football is Life（1484 评 8.9 当日平台内最强，Ted Lasso 影视词占位 + game 回声疑流向 Roblox Football Life 系列）、Sketchi（153 评 9.2，词形被拼写纠正为 sketching/sketch io/sketchup 素描词族）、Real War: Survival Games（844 评 8.2，real war + survival games 双超泛品类词，unlimited/download 回声疑手游 APK 词，参照 Real War 判例）
+- 到期复查 2 行（R2 第7天，均维持）：Vox Heroes（ratingCount 2095→2239，4天+6.9%、自首次累计+13.9% 持续平缓；「vox heroes wiki」萌芽仍居首条但「vox heroes game」零结果无新增长尾；Trends 未测。0/3 维持，R3 10/9）、Hyper Fliplation（322→493，4天+53% 较 R1 +113%/3天 明显放缓；autocomplete 仍零结果判据1未过；Trends 未测。0/3 维持，R3 10/9）
+- 异常：1) 本轮新面孔全数不做——入池以来首次单轮零【考虑】产出，/new 当日上线 4 作均为泛词/占位词，平台内强度（Football is Life 当日千评）与独立需求继续脱钩，SOP 判据 1 持续有效；2) FLUX（AI 图像模型）词族开始占位游戏类新词（flux gp→flux gpu/gpt），AI 工具词污染游戏挖词首例记录；3) Trends 沿用未测记录
+- 复查计划：10/3 七行 R1（+1 Speed Keyboard Obby、Obby Steal an Egg、Stickman Strike Force、Car Seller、My Castle、City Gas Station、Rodha 2）；10/4 Obby: +1 Laser 补测（站内搜索修复 slug）+ Duck Playground 3D、Aura Clicker R1；10/5 Obby: +1 Digging R2；10/7 六行 R2/R3 第14天；10/9 Vox Heroes、Hyper Fliplation R3
