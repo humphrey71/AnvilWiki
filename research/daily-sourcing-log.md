@@ -69,3 +69,15 @@
 - 到期复查 2 行（R2 第7天，均维持）：Vox Heroes（ratingCount 2095→2239，4天+6.9%、自首次累计+13.9% 持续平缓；「vox heroes wiki」萌芽仍居首条但「vox heroes game」零结果无新增长尾；Trends 未测。0/3 维持，R3 10/9）、Hyper Fliplation（322→493，4天+53% 较 R1 +113%/3天 明显放缓；autocomplete 仍零结果判据1未过；Trends 未测。0/3 维持，R3 10/9）
 - 异常：1) 本轮新面孔全数不做——入池以来首次单轮零【考虑】产出，/new 当日上线 4 作均为泛词/占位词，平台内强度（Football is Life 当日千评）与独立需求继续脱钩，SOP 判据 1 持续有效；2) FLUX（AI 图像模型）词族开始占位游戏类新词（flux gp→flux gpu/gpt），AI 工具词污染游戏挖词首例记录；3) Trends 沿用未测记录
 - 复查计划：10/3 七行 R1（+1 Speed Keyboard Obby、Obby Steal an Egg、Stickman Strike Force、Car Seller、My Castle、City Gas Station、Rodha 2）；10/4 Obby: +1 Laser 补测（站内搜索修复 slug）+ Duck Playground 3D、Aura Clicker R1；10/5 Obby: +1 Digging R2；10/7 六行 R2/R3 第14天；10/9 Vox Heroes、Hyper Fliplation R3
+
+## 2026-10-03（定时挖词）
+- 渠道：CrazyGames /new（curl+UA 正常，70 个游戏，连续三轮持平）→ 新面孔单页 JSON-LD 抽查（3 页）+ 到期行单页 8 页（含 lucky-escape 合并验证页）+ 站内搜索页 1 次（SSR 不出结果，slug 修复转直连验证）→ Google autocomplete 探针 ×17 词。禁 steamdb 按要求未访问
+- 新面孔 3 个（均 10/2 上线），决定分布：考虑 1 / 不做 2 / 做 0
+  - 考虑：Combat Online 2（slug combat-online-2，785 评 8.7 首日强；上线次日 autocomplete 即现 10 条全正向词族 poki/crazy games/game/free/mobile/full screen/download，入池以来最强首日 autocomplete + poki 跨平台信号 +「games like」替代寻找词；但全为「在哪玩」分发词、无 wiki/codes 攻略词，FPS 品类挤。R1 10/6 看攻略词萌芽 + SERP 验意图）
+  - 不做：Pup Pals（slug pup-pals，342 评 8.8；cast/characters/martha speaks/paw patrol 影视节目词占位，game 词被 pet/puppy pals 品类切碎）、Lawn Mower Idle（slug lawn-mower-idle，181 评 8.5；词形双关：suggest 全为割草机怠速机械词 idler pulley/idle adjustment，游戏意图不可达）
+- 到期复查 9 行（2 R2 + 7 R1，8 行维持考虑、1 行查证关闭）：
+  - R2：Cannon Chaos Silly Shots（528→648，7天+22.7% 平缓；本作词 1→3 条转好但混 OSRS 词群 chaos elemental/chaos druids cannon；1/3 维持，R3 10/10）
+  - R2 查证关闭：1 Speed Keyboard Escape 确认与「+1 Speed Keyboard Lucky Escape」同一游戏——escape slug 404、两行基线 ratingCount 均 1482、轨迹 1871(9/29)→2010(9/30)→2543(10/2) 完全连续，并入 Lucky Escape 行跟踪（自 9/26 起 6 天+71% 平台内强；另：该行首次记录实为 9/27，9/23 为初记笔误已在合并备注中澄清）
+  - R1（首记 9/30，均 R2 10/7）：+1 Speed Keyboard Obby（1040→2891，3天+178% 入池以来最强平台内爆发；codes 萌芽居首存续+「1 speed keyboard escape obby」系列交叉词出现，无 roblox 词；1/3 维持）、Obby Steal an Egg（538→1369，+154% 强；autocomplete 仍自身回声+鸟类噪音，codes 探针零；1/3 维持）、Stickman Strike Force（817→1101，+35% 中强；品牌长尾无增长仍混 jobs/meaning 噪音；1/3 维持，R2 仍无增长倾向不做）、Car Seller（821→1233，+50% 强；mod/apk+拼写变体+另一手游 car dealer life simulator，归属疑云未解；1/3 维持，SERP 硬性）、My Castle（1198→1219，+1.8% 平缓；仍品牌双回声无 codes/walkthrough 萌芽；0/3 维持）、City Gas Station（3403→3620，+6.4% 平缓；本作词 3→4 条但全 3d 后缀疑手游词；1/3 维持，SERP 硬性）、Rodha 2（764→829，+8.5% 温和；game/math playground 正向存续，CAT 考试噪音依旧；1/3 维持，SERP 裁决）
+- 异常：1) 1 Speed Keyboard Escape slug 404 引出重复行查证——两行基线 1482 完全一致是关键线索；本轮起新面孔备注列已带 slug，防再犯；2) 游戏页 JSON-LD 的 VideoGame 嵌套于 ItemPage.mainEntity 且 @type 为数组（['VideoGame','WebApplication']），解析需递归+数组判断，脚本已修复；3) SERP 归属验证连续第四轮不可用（Car Seller/City Gas Station/Rodha 2 积压），浏览器自动化补测欠账加深；4) /new 列表 70 连续三轮持平；5) Trends 沿用未测记录
+- 复查计划：10/4 Obby: +1 Laser 补测（slug 修复）+ Duck Playground 3D、Aura Clicker R1；10/5 Obby: +1 Digging R2；10/6 Combat Online 2 R1 + Steal a Eggs、Kick Brainrot Balls、Spectre Command 做行跟进；10/7 六行 R3/R2 第14天 + 七行 R2 第7天（共 13 行，复查高峰）；10/9 Vox Heroes、Hyper Fliplation R3；10/10 Cannon Chaos R3
