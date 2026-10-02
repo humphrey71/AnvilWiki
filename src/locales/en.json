@@ -224,8 +224,13 @@
           "displayType": "badge-list",
           "highlights": [
             {
+              "label": "upd6",
+              "detail": "+100 Coins · Update 6",
+              "badge": "Active"
+            },
+            {
               "label": "upd5",
-              "detail": "+100 Coins · Latest patch",
+              "detail": "+100 Coins · Update 5",
               "badge": "Active"
             },
             {
@@ -329,9 +334,13 @@
           "displayType": "timeline",
           "highlights": [
             {
-              "label": "UPD5",
+              "label": "UPD6",
               "detail": "Latest balance update and code release",
               "badge": "Latest"
+            },
+            {
+              "label": "UPD5",
+              "detail": "Balance update and code release"
             },
             {
               "label": "UPD4",
