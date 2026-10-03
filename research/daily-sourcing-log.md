@@ -81,3 +81,14 @@
   - R1（首记 9/30，均 R2 10/7）：+1 Speed Keyboard Obby（1040→2891，3天+178% 入池以来最强平台内爆发；codes 萌芽居首存续+「1 speed keyboard escape obby」系列交叉词出现，无 roblox 词；1/3 维持）、Obby Steal an Egg（538→1369，+154% 强；autocomplete 仍自身回声+鸟类噪音，codes 探针零；1/3 维持）、Stickman Strike Force（817→1101，+35% 中强；品牌长尾无增长仍混 jobs/meaning 噪音；1/3 维持，R2 仍无增长倾向不做）、Car Seller（821→1233，+50% 强；mod/apk+拼写变体+另一手游 car dealer life simulator，归属疑云未解；1/3 维持，SERP 硬性）、My Castle（1198→1219，+1.8% 平缓；仍品牌双回声无 codes/walkthrough 萌芽；0/3 维持）、City Gas Station（3403→3620，+6.4% 平缓；本作词 3→4 条但全 3d 后缀疑手游词；1/3 维持，SERP 硬性）、Rodha 2（764→829，+8.5% 温和；game/math playground 正向存续，CAT 考试噪音依旧；1/3 维持，SERP 裁决）
 - 异常：1) 1 Speed Keyboard Escape slug 404 引出重复行查证——两行基线 1482 完全一致是关键线索；本轮起新面孔备注列已带 slug，防再犯；2) 游戏页 JSON-LD 的 VideoGame 嵌套于 ItemPage.mainEntity 且 @type 为数组（['VideoGame','WebApplication']），解析需递归+数组判断，脚本已修复；3) SERP 归属验证连续第四轮不可用（Car Seller/City Gas Station/Rodha 2 积压），浏览器自动化补测欠账加深；4) /new 列表 70 连续三轮持平；5) Trends 沿用未测记录
 - 复查计划：10/4 Obby: +1 Laser 补测（slug 修复）+ Duck Playground 3D、Aura Clicker R1；10/5 Obby: +1 Digging R2；10/6 Combat Online 2 R1 + Steal a Eggs、Kick Brainrot Balls、Spectre Command 做行跟进；10/7 六行 R3/R2 第14天 + 七行 R2 第7天（共 13 行，复查高峰）；10/9 Vox Heroes、Hyper Fliplation R3；10/10 Cannon Chaos R3
+
+## 2026-10-04（定时挖词）
+- 渠道：CrazyGames /new（curl+UA，70 个游戏，带缓存参数复抓比对一致）→ 到期行单页 JSON-LD 3 页 + 英文全量 sitemap 抓取 1 次（slug 修复）→ Google autocomplete 探针 ×8 词。禁 steamdb 按要求未访问
+- 新面孔 0 个（入池以来首次）：/new 列表 70 个 slug 与上轮完全一致，连续第 4 轮零变化（缓存误判已用 ?cb 复抓排除）——平台自 10/2 上线批次后未再上新。应对：已定位英文全量 sitemap（robots.txt → sitemap-index.xml → /sitemap，约 11 万 URL），下轮起可用 sitemap 目录 diff 作为 /new 的补充通道
+- 到期复查 3 行（均维持【考虑】）：
+  - Obby: +1 Laser to Break Walls R2 补测（第7天）：slug 两轮失联根因=随机后缀（真实 slug obby-1-laser-to-break-walls-pks），sitemap 一击修复；ratingCount 9535→11574（7天+21.4%，8/31 上线已 34 天，平台内转平缓）；autocomplete 两种拼法仍零结果（判据1未过）；0/3 维持，R3 10/11
+  - Duck Playground 3D R1（第3天）：ratingCount 1011→1835（3天+81.5%，平台内强）；精确词「duck playground 3d」回声存续（噪音反而收敛），codes(c)/wiki(w) 探针零结果（R1 目标未达成）；Trends 未测。1/3 维持，R2 10/8
+  - Aura Clicker R1（第3天）：ratingCount 427→916（3天+114.5%，平台内强，评分 8.9→9.1）；autocomplete 词族存续且新增 cookie/monster/phonk/auto clicker 变体，但新增词全疑同名他作（Cookie Clicker 生态等）、归属更混浊，不计转好（防自欺判据1：平台内流量≠独立需求）；SERP 归属连续第 5 轮不可用；Trends 未测。1/3 维持，R2 10/8 SERP 硬性
+- 决定分布：新增 0 / 做 0 / 不做 0 / 维持考虑 3
+- 异常：1) /new 零变化连续 4 轮，入池以来首次零新面孔——渠道单一风险暴露，sitemap diff 双通道下轮启用；2) slug 随机后缀（-pks/-jeb/-pld 类）是 /new 滚出后直连探测必 404 的根因，sitemap 是唯一可靠修复源；3) SERP 通道（web_search/DDG）连续第 5 轮 bot challenge，归属验证积压：Car Seller、City Gas Station、Rodha 2、Aura Clicker、Combo Critters，浏览器自动化补测欠账继续加深；4) Trends 沿用未测记录
+- 复查计划：10/5 Obby +1 Digging R2；10/6 Combat Online 2 R1 + Steal a Eggs、Kick Brainrot Balls、Spectre Command 做行跟进；10/7 六行 R3/R2 第14天 + 七行 R2 第7天（13 行复查高峰）；10/8 Duck Playground 3D、Aura Clicker R2；10/9 Vox Heroes、Hyper Fliplation R3；10/10 Cannon Chaos R3；10/11 Obby +1 Laser R3
