@@ -224,6 +224,16 @@
           "displayType": "badge-list",
           "highlights": [
             {
+              "label": "upd8",
+              "detail": "+100 Coins · Update 8",
+              "badge": "Active"
+            },
+            {
+              "label": "upd7",
+              "detail": "+100 Coins · Update 7",
+              "badge": "Active"
+            },
+            {
               "label": "upd6",
               "detail": "+100 Coins · Update 6",
               "badge": "Active"
@@ -334,9 +344,17 @@
           "displayType": "timeline",
           "highlights": [
             {
-              "label": "UPD6",
+              "label": "UPD8",
               "detail": "Latest balance update and code release",
               "badge": "Latest"
+            },
+            {
+              "label": "UPD7",
+              "detail": "Balance update and code release"
+            },
+            {
+              "label": "UPD6",
+              "detail": "Balance update and code release"
             },
             {
               "label": "UPD5",
