@@ -92,3 +92,13 @@
 - 决定分布：新增 0 / 做 0 / 不做 0 / 维持考虑 3
 - 异常：1) /new 零变化连续 4 轮，入池以来首次零新面孔——渠道单一风险暴露，sitemap diff 双通道下轮启用；2) slug 随机后缀（-pks/-jeb/-pld 类）是 /new 滚出后直连探测必 404 的根因，sitemap 是唯一可靠修复源；3) SERP 通道（web_search/DDG）连续第 5 轮 bot challenge，归属验证积压：Car Seller、City Gas Station、Rodha 2、Aura Clicker、Combo Critters，浏览器自动化补测欠账继续加深；4) Trends 沿用未测记录
 - 复查计划：10/5 Obby +1 Digging R2；10/6 Combat Online 2 R1 + Steal a Eggs、Kick Brainrot Balls、Spectre Command 做行跟进；10/7 六行 R3/R2 第14天 + 七行 R2 第7天（13 行复查高峰）；10/8 Duck Playground 3D、Aura Clicker R2；10/9 Vox Heroes、Hyper Fliplation R3；10/10 Cannon Chaos R3；10/11 Obby +1 Laser R3
+
+## 2026-10-05（定时挖词）
+- 渠道：CrazyGames /new（curl+UA 正常，70 个游戏）→ 新面孔单页 JSON-LD 抽查（5 页）+ 到期行单页 2 页 → Google autocomplete 探针 ×12 词 + Marginalia 老界面 SERP 占位 1 次。禁 steamdb 按要求未访问
+- 新面孔 5 个（均 10/5 当天上线——/new 连续 4 轮零上新后恢复出货），决定分布：考虑 0 / 不做 5 / 做 0
+  - 不做：Blocky Tower Defense 2D（132 评 8.9，精确词零结果+品类泛词）、Boss Stickman - Fighting Stick It（538 评 9.1 首日强，suggest 全为同名手游下载/修改词 unlimited money/an1/ios，参照 Nations Royale 占位判例）、Pickaxe 3D Idle Miner（311 评 9.0，pickaxe 3d 被 Minecraft 3D 模型/纹理词占位）、Shadow Knights（283 评 8.8，被 Aphmau 影视词+同名 Idle RPG 手游占位）、Trick Or Treat Rush（186 评 8.9，被 Dreamlight Valley sugar rush 活动词+Rust 事件词+地名词切碎，万圣节 token 窗口短）
+- 到期复查 2 行（均维持）：
+  - Obby: +1 Digging Power Per Click R2（第7天）：ratingCount 1345→2203（4天+63.8%，平台内持续强）；autocomplete 三种拼法仍零结果（判据1未过，连续 3 轮）；Trends 未测。1/3 维持，R3 10/12
+  - Island of Madness（做行跟进）：ratingCount 490→712（8天+45.7%，较 R1 +74%/3天 放缓）；「island of madness game」萌芽仍居首；SERP 通道小修复：Marginalia 新界面已 JS 渲染不可解析（search.marginalia.nu 301 → marginalia-search.com），老界面 old-search.marginalia.nu 可直抓——查无攻略站占位（仅 Gutenberg/无关论坛/维基词碰撞，弱正向，按技能规则不作弱 SERP 证据）；Google SERP 验意图+六条终审仍欠（连续第 6 轮），下次跟进 10/12
+- 异常：1) /new 恢复出货但当日批次全为泛词/占位词——单轮零【考虑】产出为入池以来第二次（10/2 首次）；2) city-gas-station-simulator 滚出 /new（10/7 R2 到期，直连 slug 可测，10/3 已验证无随机后缀）；3) Marginalia 域名迁移致新界面不可解析，old-search.marginalia.nu 为现可用形态（知识笔记待同步）；4) Trends 沿用未测记录
+- 复查计划：10/6 Combat Online 2 R1 + Steal a Eggs、Kick Brainrot Balls、Spectre Command 做行跟进；10/7 六行 R3/R2 第14天 + 七行 R2 第7天（13 行复查高峰，city-gas-station 直连测）；10/8 Duck Playground 3D、Aura Clicker R2；10/9 Vox Heroes、Hyper Fliplation R3；10/10 Cannon Chaos R3；10/11 Obby +1 Laser R3；10/12 Obby +1 Digging R3、Island of Madness 做行跟进
