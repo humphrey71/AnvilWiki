@@ -24,14 +24,13 @@ export interface NavigationItem {
   icon: string;
   /** Whether this category has MDX content (always true for content types). */
   isContentType: true;
-  /** Sort order in nav menu (lower = earlier). Optional, defaults to array order. */
-  order?: number;
 }
 
+/** Menu order = array order — every consumer renders by physical position. */
 export const NAVIGATION_CONFIG: NavigationItem[] = [
-  { key: 'codes', path: '/codes', icon: 'lucide:gift', isContentType: true, order: 1 },
-  { key: 'balls', path: '/balls', icon: 'lucide:circle-dot', isContentType: true, order: 2 },
-  { key: 'guides', path: '/guides', icon: 'lucide:book-open', isContentType: true, order: 3 },
+  { key: 'codes', path: '/codes', icon: 'lucide:gift', isContentType: true },
+  { key: 'balls', path: '/balls', icon: 'lucide:circle-dot', isContentType: true },
+  { key: 'guides', path: '/guides', icon: 'lucide:book-open', isContentType: true },
 ];
 
 /** Derived list of content type slugs (e.g. ['bosses', 'guides', 'items', 'codes']). */
