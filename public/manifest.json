@@ -1,11 +1,11 @@
 {
-  "name": "Anvil Quest Wiki",
-  "short_name": "AQ Wiki",
-  "description": "Complete Anvil Quest wiki with boss guides, codes, and tier lists.",
+  "name": "Anime Ball Duels Wiki",
+  "short_name": "ABD Wiki",
+  "description": "Complete Anime Ball Duels wiki with active codes, tier list, ball rolling mechanics, mid-battle reroll tips, and beginner strategies.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#f36716",
+  "theme_color": "#ef4343",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
