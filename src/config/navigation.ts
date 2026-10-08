@@ -24,17 +24,16 @@ export interface NavigationItem {
   icon: string;
   /** Whether this category has MDX content (always true for content types). */
   isContentType: true;
-  /** Sort order in nav menu (lower = earlier). Optional, defaults to array order. */
-  order?: number;
 }
 
+/** Menu order = array order — every consumer renders by physical position. */
 export const NAVIGATION_CONFIG: NavigationItem[] = [
-  { key: 'codes', path: '/codes', icon: 'lucide:gift', isContentType: true, order: 1 },
-  { key: 'pets', path: '/pets', icon: 'lucide:folder', isContentType: true, order: 2 },
-  { key: 'eggs', path: '/eggs', icon: 'lucide:folder', isContentType: true, order: 3 },
-  { key: 'mutations', path: '/mutations', icon: 'lucide:folder', isContentType: true, order: 4 },
-  { key: 'rebirths', path: '/rebirths', icon: 'lucide:folder', isContentType: true, order: 5 },
-  { key: 'guides', path: '/guides', icon: 'lucide:book-open', isContentType: true, order: 6 },
+  { key: 'codes', path: '/codes', icon: 'lucide:gift', isContentType: true },
+  { key: 'pets', path: '/pets', icon: 'lucide:folder', isContentType: true },
+  { key: 'eggs', path: '/eggs', icon: 'lucide:folder', isContentType: true },
+  { key: 'mutations', path: '/mutations', icon: 'lucide:folder', isContentType: true },
+  { key: 'rebirths', path: '/rebirths', icon: 'lucide:folder', isContentType: true },
+  { key: 'guides', path: '/guides', icon: 'lucide:book-open', isContentType: true },
 ];
 
 /** Derived list of content type slugs (e.g. ['bosses', 'guides', 'items', 'codes']). */
