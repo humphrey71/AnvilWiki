@@ -72,7 +72,7 @@ export const site: SiteConfig = {
   // renders it as a mailto link.
   contactEmail: '',
   social: {
-    official: 'https://www.roblox.com',
+    official: 'https://www.roblox.com/games/124470516975332/Anime-Ball-Duels',
   },
   game: {
     name: 'Anime Ball Duels',
