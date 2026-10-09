@@ -73,6 +73,7 @@ export const site: SiteConfig = {
   contactEmail: '',
   social: {
     official: 'https://www.roblox.com/games/124470516975332/Anime-Ball-Duels',
+    discord: 'https://discord.com/invite/Dh9xyPuHhy',
   },
   game: {
     name: 'Anime Ball Duels',
