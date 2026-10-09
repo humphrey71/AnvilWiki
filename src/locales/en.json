@@ -187,21 +187,21 @@
         {
           "number": "1",
           "title": "Codes",
-          "description": "Free gold, XP, cosmetics",
+          "description": "Free Coins, Gems & Crystals",
           "icon": "lucide:gift",
           "href": "/codes"
         },
         {
           "number": "2",
-          "title": "Bosses",
-          "description": "Phase-by-phase strategy",
-          "icon": "lucide:swords",
+          "title": "Guides",
+          "description": "PvP strategies & Discord",
+          "icon": "lucide:book-open",
           "href": "/guides"
         },
         {
           "number": "3",
           "title": "Tier list",
-          "description": "Best weapons ranked",
+          "description": "Best anime balls ranked",
           "icon": "lucide:bar-chart-3",
           "href": "/tier-list"
         }
@@ -214,14 +214,34 @@
         {
           "order": 1,
           "name": "Active codes",
-          "description": "Redeem before they expire",
+          "description": "Redeem before they expire (5 working codes)",
           "href": "/codes",
           "displayType": "badge-list",
           "highlights": [
             {
-              "label": "CODE-PLACEHOLDER",
-              "detail": "Tap to copy on the codes page",
+              "label": "DIVINE",
+              "detail": "1500 Coins + 40 Gems + 10 Trait Crystals",
               "badge": "NEW"
+            },
+            {
+              "label": "1KLIKES",
+              "detail": "50 Gems + 15 Trait Crystals",
+              "badge": "NEW"
+            },
+            {
+              "label": "2VS2",
+              "detail": "500 Coins + 5 Gems",
+              "badge": "ACTIVE"
+            },
+            {
+              "label": "VOID",
+              "detail": "25 Gems",
+              "badge": "ACTIVE"
+            },
+            {
+              "label": "UPDATE1",
+              "detail": "1000 Coins",
+              "badge": "ACTIVE"
             }
           ]
         }
