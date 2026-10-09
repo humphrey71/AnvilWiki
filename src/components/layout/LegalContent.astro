@@ -35,17 +35,20 @@ const year = new Date().getFullYear();
         This wiki is maintained by volunteers. If you spot an error or have content to contribute,
         join our Discord and let us know. All content is freely accessible — no account required.
       </p>
-      <h2>Contact</h2>
+      <h2>Contact & Support</h2>
       <p>
-        Reach us via our{' '}
+        For inquiries regarding this wiki's content, guide corrections, or feedback, reach our editorial team directly at{' '}
+        <a href={`mailto:${site.contactEmail || 'support@animeballduels.com'}`}>
+          {site.contactEmail || 'support@animeballduels.com'}
+        </a>.
+        Please note that this site is an independent fan-made wiki and does not provide in-game technical support. For game-related queries, check{' '}
         <a href={site.social.discord} target="_blank" rel="noopener noreferrer">
-          Discord server
+          the official Discord server
         </a>{' '}
         or{' '}
         <a href={site.social.official} target="_blank" rel="noopener noreferrer">
-          the game's official channels
-        </a>
-        .
+          the official Roblox game page
+        </a>.
       </p>
     </>
   )
@@ -170,9 +173,9 @@ const year = new Date().getFullYear();
       </p>
       <h2>DMCA / Takedown</h2>
       <p>
-        If you believe any content on this site infringes your copyright, please contact us via our{' '}
-        <a href={site.social.discord} target="_blank" rel="noopener noreferrer">
-          Discord server
+        If you believe any content on this site infringes your copyright, please contact us directly at{' '}
+        <a href={`mailto:${site.contactEmail || 'support@animeballduels.com'}`}>
+          {site.contactEmail || 'support@animeballduels.com'}
         </a>{' '}
         with a detailed description of the allegedly infringing material. We will review and respond
         to valid requests promptly.
@@ -189,13 +192,33 @@ const year = new Date().getFullYear();
       {/* h2, not h1 — LegalPage already renders the page H1 (single-H1 rule). */}
       <h2>Contact {site.name}</h2>
       <p>
-        {site.name} is a fan-made wiki. Reach us or contribute through any of the channels below.
+        {site.name} is an independent, fan-made community wiki. Please review the contact channels below depending on your request:
       </p>
-      <h2>Community</h2>
+
+      <h2>Website Support & Inquiries</h2>
+      <p>
+        For questions about our guide content, reporting errors or typos, wiki partnerships, or editorial feedback, reach our site team directly:
+      </p>
+      <ul>
+        <li>
+          <strong>Editorial & Site Support Email:</strong>{' '}
+          <a href={`mailto:${site.contactEmail || 'support@animeballduels.com'}`}>
+            {site.contactEmail || 'support@animeballduels.com'}
+          </a>
+        </li>
+      </ul>
+      <p class="rounded-md border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-900 dark:text-amber-200">
+        <strong>Important Notice:</strong> This email provides support for website and guide content only. We do <strong>not</strong> provide in-game player support, account recovery, ban appeals, or billing assistance for the Roblox game.
+      </p>
+
+      <h2>Official Game Channels & Developer Support</h2>
+      <p>
+        For official game updates, in-game bug reports, customer service, or developer interaction, please visit the official channels run by King Games TD:
+      </p>
       <ul>
         {site.social.official && (
           <li>
-            <strong>Official game website:</strong>{' '}
+            <strong>Official Roblox Experience:</strong>{' '}
             <a href={site.social.official} target="_blank" rel="noopener noreferrer">
               {site.social.official}
             </a>
@@ -203,43 +226,21 @@ const year = new Date().getFullYear();
         )}
         {site.social.discord && (
           <li>
-            <strong>Discord:</strong>{' '}
+            <strong>Official Game Discord:</strong>{' '}
             <a href={site.social.discord} target="_blank" rel="noopener noreferrer">
-              Join our server
+              Join the official Discord server
             </a>
-          </li>
-        )}
-        {site.social.reddit && (
-          <li>
-            <strong>Reddit:</strong>{' '}
-            <a href={site.social.reddit} target="_blank" rel="noopener noreferrer">
-              r/{site.game.name.replace(/\s+/g, '')}
-            </a>
-          </li>
-        )}
-        {site.social.youtube && (
-          <li>
-            <strong>YouTube:</strong>{' '}
-            <a href={site.social.youtube} target="_blank" rel="noopener noreferrer">
-              {site.name} channel
-            </a>
-          </li>
-        )}
-        {site.contactEmail && (
-          <li>
-            <strong>Email:</strong> <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
           </li>
         )}
       </ul>
-      <h2>Contributing</h2>
+
+      <h2>Copyright & DMCA Inquiries</h2>
       <p>
-        Found a typo or outdated info? Want to add a guide? This wiki is open source — submit changes
-        via pull requests or through any channel listed above.
-      </p>
-      <h2>Reporting Issues</h2>
-      <p>
-        For copyright or takedown requests, see our{' '}
-        <a href="/copyright/">Copyright page</a>.
+        For takedown requests or intellectual property notices, please email{' '}
+        <a href={`mailto:${site.contactEmail || 'support@animeballduels.com'}`}>
+          {site.contactEmail || 'support@animeballduels.com'}
+        </a>{' '}
+        or visit our <a href="/copyright/">Copyright notice page</a>.
       </p>
     </>
   )

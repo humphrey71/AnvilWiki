@@ -70,7 +70,7 @@ export const site: SiteConfig = {
   legalNotice: 'Anime Ball Duels Wiki is an unofficial fan-made site. Not affiliated with or endorsed by King Games TD or Roblox.',
   // Set a real address if you run no social channels — the contact page
   // renders it as a mailto link.
-  contactEmail: '',
+  contactEmail: 'support@animeballduels.com',
   social: {
     official: 'https://www.roblox.com/games/124470516975332/Anime-Ball-Duels',
     discord: 'https://discord.com/invite/Dh9xyPuHhy',
