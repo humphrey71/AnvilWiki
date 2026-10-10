@@ -219,28 +219,28 @@
           "displayType": "badge-list",
           "highlights": [
             {
+              "label": "UPDATE1.5",
+              "detail": "2,500 Coins + 60 Gems",
+              "badge": "NEW"
+            },
+            {
+              "label": "BATTLEPASS",
+              "detail": "30 Gems + 1 Pass Tier",
+              "badge": "NEW"
+            },
+            {
+              "label": "MASTERY",
+              "detail": "1,500 Coins + 20 Trait Crystals",
+              "badge": "NEW"
+            },
+            {
               "label": "DIVINE",
               "detail": "1500 Coins + 40 Gems + 10 Trait Crystals",
-              "badge": "NEW"
+              "badge": "ACTIVE"
             },
             {
               "label": "1KLIKES",
               "detail": "50 Gems + 15 Trait Crystals",
-              "badge": "NEW"
-            },
-            {
-              "label": "2VS2",
-              "detail": "500 Coins + 5 Gems",
-              "badge": "ACTIVE"
-            },
-            {
-              "label": "VOID",
-              "detail": "25 Gems",
-              "badge": "ACTIVE"
-            },
-            {
-              "label": "UPDATE1",
-              "detail": "1000 Coins",
               "badge": "ACTIVE"
             }
           ]
