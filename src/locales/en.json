@@ -214,33 +214,33 @@
         {
           "order": 1,
           "name": "Active codes",
-          "description": "Redeem before they expire (9 working codes)",
+          "description": "Redeem before they expire (5 working codes)",
           "href": "/codes",
           "displayType": "badge-list",
           "highlights": [
             {
               "label": "67PATHS",
-              "detail": "6,700 Coins + 500 Gems + 30 Trait Rolls",
-              "badge": "NEW"
-            },
-            {
-              "label": "NEWSHUTDOWN",
-              "detail": "1,000 Coins + 150 Gems + 10 Trait Rolls",
-              "badge": "NEW"
-            },
-            {
-              "label": "SORRYSHUTDOWN",
-              "detail": "1,000 Coins + 100 Gems + 10 Trait Rolls",
+              "detail": "6,700 Coins + 500 Gems + 30 Trait Crystals",
               "badge": "NEW"
             },
             {
               "label": "1MVISITS",
-              "detail": "10,000 Coins + 500 Gems + 30 Crystals",
+              "detail": "10,000 Coins + 500 Gems + 30 Crystals + 5 Spins",
               "badge": "NEW"
             },
             {
-              "label": "FINAL SHUTDOWN",
-              "detail": "1,000 Coins + 150 Gems + 5 Trait Crystals",
+              "label": "NEWSHUTDOWN",
+              "detail": "1,000 Coins + 150 Gems + 10 Trait Crystals",
+              "badge": "ACTIVE"
+            },
+            {
+              "label": "SORRYSHUTDOWN",
+              "detail": "1,000 Coins + 100 Gems + 10 Trait Crystals",
+              "badge": "ACTIVE"
+            },
+            {
+              "label": "BATTLEPASS",
+              "detail": "30 Gems + 800 Pass XP",
               "badge": "ACTIVE"
             }
           ]
